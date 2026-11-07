@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JPG / PNG to PDF – Doxlio (free, no sign-up)</title>
+<meta name="description" content="Turn images into one PDF. Free to use — no sign-up required.">
+<link rel="canonical" href="https://digitaldevelopstudio.github.io/Doxlio-website/img-pdf/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Doxlio">
+<meta property="og:title" content="JPG / PNG to PDF – Doxlio (free, no sign-up)"><meta property="og:description" content="Turn images into one PDF. Free to use — no sign-up required."><meta property="og:url" content="https://digitaldevelopstudio.github.io/Doxlio-website/img-pdf/">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="JPG / PNG to PDF – Doxlio (free, no sign-up)"><meta name="twitter:description" content="Turn images into one PDF. Free to use — no sign-up required.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Cpath d='M20 16h16l10 10v22H20z' fill='%23fff'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Doxlio","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free browser-based document scanner, OCR, PDF tools, resume and cover letter builders.","url":"https://digitaldevelopstudio.github.io/Doxlio-website/"}</script>
+<style>
+:root{box-sizing:border-box;--bg:#f6f7fb;--card:#fff;--tx:#14172b;--mut:#565b73;--ac:#4f46e5;--ac2:#0891b2;--bd:#e3e5f0}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1020;--card:#181b30;--tx:#eef0ff;--mut:#a3a9cc;--bd:#2a2e4a;--ac:#818cf8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--ac)}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:10px 16px;border-bottom:1px solid var(--bd);background:var(--card);position:sticky;top:0;z-index:5}
+header .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:19px;text-decoration:none;color:var(--tx)}
+nav{display:flex;flex-wrap:wrap;gap:4px}nav a{padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--tx)}nav a.on,nav a:hover{background:var(--bg)}
+main{max-width:1000px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;margin-bottom:14px}
+h1{font-size:26px;margin:0 0 6px}h2{font-size:20px;margin:26px 0 10px}h3{margin:14px 0 6px;font-size:16px}p{color:var(--mut);margin:0 0 12px}
+button,.btn{font:inherit;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:9px 14px;border-radius:10px;cursor:pointer;display:inline-block;text-decoration:none}
+button.p,.btn.p{background:linear-gradient(135deg,#4f46e5,#0891b2);color:#fff;border:0;font-weight:600}
+button.on{outline:2px solid var(--ac)}button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--ac2);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+.hero{padding:34px 12px;text-align:center}.hero h1{font-size:clamp(28px,6vw,46px);background:linear-gradient(135deg,#4f46e5,#0891b2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:17px;max-width:620px;margin:8px auto 16px}
+input[type=text],textarea,select{width:100%;padding:9px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}
+#hsearch{max-width:520px;font-size:16px;padding:12px 14px}
+input[type=range]{width:100%}input[type=color]{height:38px;width:80px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.tc{display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;text-decoration:none;color:var(--tx);transition:transform .15s,box-shadow .15s}
+.tc:hover{transform:translateY(-2px);box-shadow:0 6px 18px #4f46e522}.tc small{color:var(--mut)}.ic{font-size:26px}
+.two{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.f{display:block;margin:6px 0}.f span{display:block;font-size:13px;color:var(--mut);margin-bottom:2px}
+.chk{display:block;font-size:13px;color:var(--mut)}.sub-card{border:1px dashed var(--bd);border-radius:10px;padding:8px;margin:8px 0}
+.note{font-size:13px}.fl{display:flex;gap:8px;align-items:center;justify-content:space-between;border:1px solid var(--bd);border-radius:10px;padding:6px 10px;margin:6px 0}
+.drop{border:2px dashed var(--bd);border-radius:14px;padding:22px;text-align:center}.drop.hot{border-color:var(--ac);background:#4f46e511}
+.pvbox{background:#8884;border-radius:12px;padding:8px;overflow:hidden}
+details{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:8px 12px;margin:6px 0}summary{cursor:pointer;font-weight:600}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+footer{border-top:1px solid var(--bd);padding:18px 16px;text-align:center;color:var(--mut);font-size:13px}footer a{margin:0 8px}
+#msg{min-height:22px;font-size:14px;margin:0 0 8px}.err{color:#d33}.ok{color:#168a4d}
+#crop{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:20}#crop .card{max-width:340px;width:92%}
+.stage{position:relative;display:inline-block;max-width:100%;touch-action:none;line-height:0}
+canvas,video{max-width:100%;border-radius:10px;background:#0003}
+#ov{position:absolute;left:0;top:0;touch-action:none}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:4px 0}.thumbs img{height:84px;border-radius:8px;border:2px solid var(--bd);cursor:pointer}.thumbs img.on{border-color:var(--ac)}
+label.sl{display:grid;grid-template-columns:90px 1fr 40px;gap:8px;align-items:center;font-size:13px}
+.scan{position:absolute;inset:0;background:#0006;display:none;overflow:hidden;border-radius:10px}
+.scan i{position:absolute;left:0;right:0;height:4px;background:#06b6d4;box-shadow:0 0 18px 6px #06b6d4;animation:sw 1s ease-in-out infinite alternate}
+@keyframes sw{from{top:0}to{top:calc(100% - 4px)}}
+#pv{position:fixed;inset:0;background:#000b;display:none;overflow:auto;padding:20px;z-index:9}#pv img{display:block;max-width:min(720px,100%);margin:0 auto 14px;background:#fff;border-radius:6px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#/"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#lg)"/><path d="M20 16h16l10 10v22H20z" fill="#fff"/><path d="M36 16v10h10" fill="#c7d2fe"/></svg>Doxlio</a>
+<nav aria-label="Main"><a href="#/">All tools</a><a href="#/scanner">Scanner</a><a href="#/ocr">OCR</a><a href="#/resume">Resume</a><a href="#/cover">Cover letter</a><a href="#/pdf-merge">PDF tools</a></nav>
+</header>
+<main id="main">
+<div id="msg" role="status" aria-live="polite"></div>
+
+<div class="view" id="v-home">
+<div class="hero"><h1>Every document. One smart place.</h1><p>Scan, OCR, edit PDFs and build resumes and cover letters in your browser. Free to use — no sign-up required.</p>
+<input type="text" id="hsearch" placeholder="Search tools: pdf, scan, resume…" aria-label="Search tools" autocomplete="off"></div>
+<div id="homeTools"></div>
+<h2>Why Doxlio</h2>
+<div class="why"><div class="card"><h3>Private by design</h3><p>Files are processed on your device and are not uploaded to a Doxlio server.</p></div><div class="card"><h3>No account</h3><p>Open a tool and use it. Nothing to sign up for.</p></div><div class="card"><h3>Real processing</h3><p>The scanner warps real pixels, OCR uses Tesseract, PDFs are edited with pdf-lib.</p></div></div>
+<h2>How it works</h2><div class="card"><p>1. Pick a tool. 2. Add your file or use the camera. 3. Download the result. Closing the page discards your work; Doxlio keeps nothing.</p></div>
+<h2>Frequently asked questions</h2><div id="faq"></div>
+</div>
+
+<div class="view" id="v-scanner" hidden>
+<h1>📷 Document Scanner</h1><p>Camera or upload, four-corner crop, perspective correction, filters and multi-page PDF. Free to use — no sign-up required. <span id="cvst"></span></p>
+<section id="s-home" class="card">
+<h1>Scan a document</h1>
+<p>Everything is processed on your device. Nothing is uploaded.</p>
+<div class="row">
+<button class="p" id="bCam">Open camera</button>
+<label class="btn" style="display:inline-block">Upload image<input id="file" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden></label>
+</div>
+</section>
+
+<section id="s-cam" class="card" hidden>
+<div class="stage"><video id="vid" playsinline muted autoplay></video></div>
+<div class="row"><button class="p" id="bShot">Capture</button><button id="bFlip">Switch camera</button><button id="bCamX">Close</button></div>
+</section>
+
+<section id="s-crop" class="card" hidden>
+<h1>Adjust corners</h1><p>Drag the four handles to the document corners.</p>
+<div class="stage" id="cropStage"><canvas id="cc"></canvas><canvas id="ov"></canvas><div class="scan" id="scanA"><i></i></div></div>
+<div class="row"><button id="bAuto">Auto detect</button><button id="bReset">Reset crop</button><button class="p" id="bScan">Scan</button><button id="bCropX">Cancel</button></div>
+</section>
+
+<section id="s-ed" class="card" hidden>
+<div class="row"><b id="pgl"></b></div>
+<div class="stage"><canvas id="pc"></canvas></div>
+<div class="row" id="filters"></div>
+<div style="display:grid;gap:6px;max-width:480px">
+<label class="sl">Brightness<input type="range" id="rb" min="-100" max="100" value="0"><span id="vb">0</span></label>
+<label class="sl">Contrast<input type="range" id="rc" min="-50" max="100" value="0"><span id="vc">0</span></label>
+<label class="sl">Sharpness<input type="range" id="rs" min="0" max="100" value="0"><span id="vs">0</span></label>
+</div>
+<div class="row">
+<button id="bL">⟲ Rotate left</button><button id="bR">Rotate right ⟳</button>
+<button id="bBA">Hold: before</button><button id="bRst">Reset filters</button>
+<button id="bRe">Re-crop</button><button id="bMl">◀ Move</button><button id="bMr">Move ▶</button><button id="bDel">Delete</button>
+</div>
+<div class="thumbs" id="th"></div>
+<div class="row"><button id="bAdd">+ Add page</button><button id="bPrev">Preview document</button><button id="bOcr">Extract text (OCR)</button><button id="bJpg">Download JPG</button><button class="p" id="bPdf">Download PDF</button></div>
+</section>
+
+</div>
+
+<div class="view" id="v-ocr" hidden>
+<h1>🔎 Image to Text (OCR)</h1><p>Real text recognition with Tesseract. Free to use — no sign-up required. Images stay on your device; language data downloads on first use.</p>
+<div class="card"><div class="row"><label class="btn p">Choose image<input type="file" id="ocrFile" accept="image/jpeg,image/png,image/webp" hidden></label><select id="ocrLang" aria-label="Language" style="width:auto"></select><button class="p" id="ocrRun">Extract text</button></div>
+<img id="ocrPrev" alt="Image to read" hidden style="max-width:100%;max-height:260px;border-radius:10px;margin:8px 0">
+<label class="f"><span>Extracted text (editable)</span><textarea id="ocrOut" rows="12" dir="ltr"></textarea></label>
+<div class="row"><button id="ocrCopy">Copy</button><button id="ocrTxt">Download TXT</button><button id="ocrDoc">Export to Word (.doc)</button></div></div>
+</div>
+
+<div class="view" id="v-resume" hidden>
+<h1>📄 Resume / CV Builder</h1><p>Edit on the left, see the A4 page live. Free to use — no sign-up required. Sample content is filled in; replace it or press Clear.</p>
+<div class="two"><div class="card"><div class="row"><button id="rvClear">Clear sample</button><button class="p" id="rvPrint">Print / Save PDF</button></div><div id="rvForm"></div></div><div class="pvbox" id="rvBox"><div id="rvWrap"></div></div></div>
+</div>
+
+<div class="view" id="v-cover" hidden>
+<h1>✉️ Cover Letter Builder</h1><p>Fill in the details, edit the letter and print or save as PDF. Free to use — no sign-up required.</p>
+<div class="two"><div class="card"><div class="row"><button class="p" id="clPrint">Print / Save PDF</button></div><div id="clForm"></div></div><div class="pvbox"><div id="clWrap"></div></div></div>
+</div>
+
+<div class="view" id="v-tool" hidden></div>
+<div class="view" id="v-page" hidden></div>
+</main>
+<div id="crop"><div class="card"><h3>Crop profile photo</h3><canvas id="crC" width="280" height="280"></canvas>
+<label class="f"><span>Zoom</span><input type="range" id="crZ" min="1" max="3" step="0.05" value="1"></label><label class="f"><span>Move left / right</span><input type="range" id="crX" min="-100" max="100" value="0"></label><label class="f"><span>Move up / down</span><input type="range" id="crY" min="-100" max="100" value="0"></label>
+<div class="row"><button class="p" id="crOk">Use photo</button><button id="crNo">Cancel</button></div></div></div>
+<div id="pv"><div class="row" style="justify-content:center"><button id="pvx" class="p">Close preview</button></div><div id="pvi"></div></div>
+
+
+<footer><div><a href="#/about">About</a><a href="#/contact">Contact</a><a href="#/privacy">Privacy</a><a href="#/terms">Terms</a></div><div>© Doxlio. Free to use — no sign-up required.</div></footer>
+<script>window.DX_ROUTE="img-pdf";</script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var pages=[],cur=-1,editIdx=-1,stream=null,facing='environment',cvReady=false;
+var work={img:null,corners:[],sc:1};
+function msg(t,c){var m=$('msg');m.textContent=t||'';m.className=c||''}
+function show(id){['s-home','s-cam','s-crop','s-ed'].forEach(function(s){$(s).hidden=(s!==id)})}
+function cnv(w,h){var c=document.createElement('canvas');c.width=w;c.height=h;return c}
+
+window.loadCV=function(){if(window.__cvl)return;window.__cvl=1;$('cvst').textContent='Edge detection: loading…';
+var s=document.createElement('script');
+s.src='https://cdn.jsdelivr.net/npm/@techstark/opencv-js@4.9.0-release.3/dist/opencv.js';
+function ok(){cvReady=true;$('cvst').textContent='Edge detection: OpenCV ready'}
+function bad(){$('cvst').textContent='Edge detection: unavailable (manual corners)'}
+s.onload=function(){try{
+ if(typeof cv==='undefined'){bad();return}
+ if(cv.then){cv.then(function(m){window.cv=m;ok()}).catch(bad)}
+ else if(cv.Mat){ok()} else {cv.onRuntimeInitialized=ok}
+}catch(e){bad()}};
+s.onerror=bad;document.head.appendChild(s);
+};
+
+/* Input */
+var MAXIN=2400,TYPES=['image/jpeg','image/png','image/webp'];
+$('file').onchange=function(e){
+ var f=e.target.files[0];e.target.value='';if(!f)return;
+ if(TYPES.indexOf(f.type)<0){msg('Unsupported file type. Use JPG, PNG or WebP.','err');return}
+ if(f.size>25*1024*1024){msg('File is larger than 25 MB.','err');return}
+ var im=new Image();im.onload=function(){startCrop(im)};im.onerror=function(){msg('Could not read this image.','err')};
+ im.src=URL.createObjectURL(f);
+};
+$('bCam').onclick=function(){openCam()};
+function openCam(){
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){msg('Camera is not available in this browser or context. Use Upload instead.','err');return}
+ if(stream)stream.getTracks().forEach(function(t){t.stop()});
+ navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:facing},width:{ideal:1920},height:{ideal:1080}},audio:false}).then(function(s){
+  stream=s;$('vid').srcObject=s;show('s-cam');msg('')
+ }).catch(function(e){
+  var n=e&&e.name;msg(n==='NotAllowedError'?'Camera permission was denied. Allow camera access in your browser settings, or use Upload.':n==='NotFoundError'?'No camera found on this device.':'Could not open the camera: '+(e&&e.message||n),'err');
+ });
+}
+function closeCam(){if(stream)stream.getTracks().forEach(function(t){t.stop()});stream=null;show(pages.length?'s-ed':'s-home')}
+$('bCamX').onclick=closeCam;
+$('bFlip').onclick=function(){facing=facing==='environment'?'user':'environment';openCam()};
+$('bShot').onclick=function(){
+ var v=$('vid');if(!v.videoWidth){msg('Camera is not ready yet.','err');return}
+ var c=cnv(v.videoWidth,v.videoHeight);c.getContext('2d').drawImage(v,0,0);
+ if(stream)stream.getTracks().forEach(function(t){t.stop()});stream=null;startCrop(c);
+};
+
+/* Crop */
+function fitCanvas(src){
+ var m=Math.max(src.width,src.height),k=m>MAXIN?MAXIN/m:1,c=cnv(Math.round(src.width*k),Math.round(src.height*k));
+ c.getContext('2d').drawImage(src,0,0,c.width,c.height);return c;
+}
+function startCrop(src,corners){
+ var o=fitCanvas(src);work.img=o;
+ var maxW=Math.min(900,window.innerWidth-60),maxH=window.innerHeight*0.65;
+ work.sc=Math.min(maxW/o.width,maxH/o.height,1);
+ var w=Math.round(o.width*work.sc),h=Math.round(o.height*work.sc);
+ [$('cc'),$('ov')].forEach(function(c){c.width=w;c.height=h;c.style.width=w+'px';c.style.height=h+'px'});
+ $('cc').getContext('2d').drawImage(o,0,0,w,h);
+ work.corners=corners||defaultCorners();
+ if(!corners&&cvReady){autoDetect(true)}
+ drawOv();show('s-crop');msg('');
+}
+function defaultCorners(){var w=work.img.width,h=work.img.height,x=w*.06,y=h*.06;return[[x,y],[w-x,y],[w-x,h-y],[x,h-y]]}
+$('bReset').onclick=function(){work.corners=defaultCorners();drawOv()};
+$('bAuto').onclick=function(){autoDetect(false)};
+$('bCropX').onclick=function(){editIdx=-1;show(pages.length?'s-ed':'s-home')};
+function order(p){
+ var s=p.map(function(a){return a[0]+a[1]}),d=p.map(function(a){return a[0]-a[1]});
+ return[p[s.indexOf(Math.min.apply(0,s))],p[d.indexOf(Math.max.apply(0,d))],p[s.indexOf(Math.max.apply(0,s))],p[d.indexOf(Math.min.apply(0,d))]];
+}
+function autoDetect(silent){
+ if(!cvReady){if(!silent)msg('OpenCV is not available. Drag the corners manually.','err');return}
+ var mats=[];function M(m){mats.push(m);return m}
+ try{
+  var k=Math.min(1,700/Math.max(work.img.width,work.img.height)),sm=cnv(Math.round(work.img.width*k),Math.round(work.img.height*k));
+  sm.getContext('2d').drawImage(work.img,0,0,sm.width,sm.height);
+  var src=M(cv.imread(sm)),g=M(new cv.Mat()),e=M(new cv.Mat());
+  cv.cvtColor(src,g,cv.COLOR_RGBA2GRAY);cv.GaussianBlur(g,g,new cv.Size(5,5),0);cv.Canny(g,e,60,160);
+  var kr=M(cv.getStructuringElement(cv.MORPH_RECT,new cv.Size(5,5)));cv.dilate(e,e,kr);
+  var cs=M(new cv.MatVector()),hi=M(new cv.Mat());cv.findContours(e,cs,hi,cv.RETR_LIST,cv.CHAIN_APPROX_SIMPLE);
+  var best=null,ba=sm.width*sm.height*0.15;
+  for(var i=0;i<cs.size();i++){
+   var c=cs.get(i),ap=new cv.Mat(),pr=cv.arcLength(c,true);cv.approxPolyDP(c,ap,0.02*pr,true);
+   if(ap.rows===4&&cv.isContourConvex(ap)){var a=cv.contourArea(ap);if(a>ba){ba=a;best=[];for(var j=0;j<4;j++)best.push([ap.data32S[j*2]/k,ap.data32S[j*2+1]/k])}}
+   ap.delete();c.delete();
+  }
+  if(best){work.corners=order(best);drawOv();msg('Document edges detected. Fine-tune the corners if needed.','ok')}
+  else if(!silent)msg('No clear document edges found. Drag the corners manually.','err');
+ }catch(x){if(!silent)msg('Auto detection failed. Drag the corners manually.','err')}
+ finally{mats.forEach(function(m){try{m.delete()}catch(_){}})}
+}
+function drawOv(){
+ var c=$('ov'),x=c.getContext('2d'),s=work.sc,p=work.corners.map(function(a){return[a[0]*s,a[1]*s]});
+ x.clearRect(0,0,c.width,c.height);
+ x.fillStyle='rgba(0,0,0,.45)';x.beginPath();x.rect(0,0,c.width,c.height);
+ x.moveTo(p[0][0],p[0][1]);for(var i=3;i>=0;i--)x.lineTo(p[i][0],p[i][1]);x.fill('evenodd');
+ x.strokeStyle='#06b6d4';x.lineWidth=2;x.beginPath();p.forEach(function(a,i){i?x.lineTo(a[0],a[1]):x.moveTo(a[0],a[1])});x.closePath();x.stroke();
+ p.forEach(function(a){x.fillStyle='#fff';x.strokeStyle='#5b5bf0';x.lineWidth=3;x.beginPath();x.arc(a[0],a[1],12,0,7);x.fill();x.stroke()});
+}
+var drag=-1;
+function pos(e){var r=$('ov').getBoundingClientRect();return[(e.clientX-r.left)/work.sc,(e.clientY-r.top)/work.sc]}
+$('ov').addEventListener('pointerdown',function(e){
+ var q=pos(e),bd=1e9;work.corners.forEach(function(a,i){var d=Math.hypot(a[0]-q[0],a[1]-q[1])*work.sc;if(d<bd){bd=d;drag=i}});
+ if(bd>40)drag=-1;else{$('ov').setPointerCapture(e.pointerId);e.preventDefault()}
+});
+$('ov').addEventListener('pointermove',function(e){
+ if(drag<0)return;var q=pos(e);
+ work.corners[drag]=[Math.max(0,Math.min(work.img.width,q[0])),Math.max(0,Math.min(work.img.height,q[1]))];drawOv();
+});
+['pointerup','pointercancel'].forEach(function(n){$('ov').addEventListener(n,function(){drag=-1})});
+
+/* Perspective warp on real pixels */
+function solve(A,b){
+ var n=8,i,j,k;for(i=0;i<n;i++)A[i].push(b[i]);
+ for(i=0;i<n;i++){var m=i;for(j=i+1;j<n;j++)if(Math.abs(A[j][i])>Math.abs(A[m][i]))m=j;var t=A[i];A[i]=A[m];A[m]=t;
+  for(j=i+1;j<n;j++){var f=A[j][i]/A[i][i];for(k=i;k<=n;k++)A[j][k]-=f*A[i][k]}}
+ var x=new Array(n);for(i=n-1;i>=0;i--){var s=A[i][n];for(j=i+1;j<n;j++)s-=A[i][j]*x[j];x[i]=s/A[i][i]}return x;
+}
+function warp(img,q){
+ var d=function(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1])};
+ var W=Math.max(d(q[0],q[1]),d(q[3],q[2])),H=Math.max(d(q[0],q[3]),d(q[1],q[2])),k=Math.min(1,1800/Math.max(W,H));
+ W=Math.max(16,Math.round(W*k));H=Math.max(16,Math.round(H*k));
+ var dst=[[0,0],[W,0],[W,H],[0,H]],A=[],b=[];
+ for(var i=0;i<4;i++){var x=dst[i][0],y=dst[i][1],X=q[i][0],Y=q[i][1];
+  A.push([x,y,1,0,0,0,-x*X,-y*X]);b.push(X);A.push([0,0,0,x,y,1,-x*Y,-y*Y]);b.push(Y)}
+ var h=solve(A,b),sc=img.getContext('2d').getImageData(0,0,img.width,img.height),sd=sc.data,sw=img.width,sh=img.height;
+ var out=cnv(W,H),ox=out.getContext('2d'),od=ox.createImageData(W,H),o=od.data;
+ for(var y2=0;y2<H;y2++)for(var x2=0;x2<W;x2++){
+  var w=h[6]*x2+h[7]*y2+1,sx=(h[0]*x2+h[1]*y2+h[2])/w,sy=(h[3]*x2+h[4]*y2+h[5])/w,p=(y2*W+x2)*4;
+  if(sx<0||sy<0||sx>=sw-1||sy>=sh-1){o[p]=o[p+1]=o[p+2]=255;o[p+3]=255;continue}
+  var x0=sx|0,y0=sy|0,fx=sx-x0,fy=sy-y0,i0=(y0*sw+x0)*4,i1=i0+4,i2=i0+sw*4,i3=i2+4;
+  for(var c=0;c<3;c++)o[p+c]=sd[i0+c]*(1-fx)*(1-fy)+sd[i1+c]*fx*(1-fy)+sd[i2+c]*(1-fx)*fy+sd[i3+c]*fx*fy;
+  o[p+3]=255;
+ }
+ ox.putImageData(od,0,0);return out;
+}
+$('bScan').onclick=function(){
+ $('scanA').style.display='block';$('bScan').disabled=true;
+ setTimeout(function(){
+  try{
+   var base=warp(work.img,work.corners);
+   var pg={orig:work.img,corners:work.corners.map(function(a){return a.slice()}),base:base,mode:'auto',b:0,c:0,s:0,rot:0};
+   if(editIdx>=0){pages[editIdx]=pg;cur=editIdx}else{pages.push(pg);cur=pages.length-1}
+   editIdx=-1;msg('Page scanned.','ok');show('s-ed');refresh();
+  }catch(e){msg('Scanning failed: '+e.message,'err')}
+  $('scanA').style.display='none';$('bScan').disabled=false;
+ },1100);
+};
+
+/* Image processing */
+function blurBg(c){var k=Math.max(1,Math.round(Math.max(c.width,c.height)/24)),s=cnv(Math.max(1,c.width/k|0),Math.max(1,c.height/k|0)),sx=s.getContext('2d');
+ sx.drawImage(c,0,0,s.width,s.height);var b=cnv(c.width,c.height),bx=b.getContext('2d');bx.imageSmoothingQuality='high';bx.drawImage(s,0,0,c.width,c.height);return bx.getImageData(0,0,c.width,c.height).data}
+function levels(d,ch){
+ var h=new Uint32Array(256),n=0,i;for(i=0;i<d.length;i+=4){h[d[i+ch]]++;n++}
+ var lo=0,hi=255,a=0;for(i=0;i<256;i++){a+=h[i];if(a>n*.01){lo=i;break}}a=0;for(i=255;i>=0;i--){a+=h[i];if(a>n*.01){hi=i;break}}
+ return[lo,Math.max(hi,lo+1)];
+}
+function render(pg,full){
+ var rot=((pg.rot%4)+4)%4,b=pg.base,bw=rot%2?b.height:b.width,bh=rot%2?b.width:b.height;
+ var c=cnv(bw,bh),x=c.getContext('2d');x.translate(bw/2,bh/2);x.rotate(rot*Math.PI/2);x.drawImage(b,-b.width/2,-b.height/2);
+ if(full==='raw')return c;
+ var im=x.getImageData(0,0,bw,bh),d=im.data,i,m=pg.mode;
+ if(m==='doc'||m==='bw'){var bg=blurBg(c);
+  for(i=0;i<d.length;i+=4){var g=.299*d[i]+.587*d[i+1]+.114*d[i+2],bb=.299*bg[i]+.587*bg[i+1]+.114*bg[i+2]+1,v=Math.min(255,g/bb*245);
+   if(m==='bw')v=v>175?255:0;else v=255*Math.pow(v/255,1.6);d[i]=d[i+1]=d[i+2]=v}}
+ else if(m==='gray'){for(i=0;i<d.length;i+=4){var g2=.299*d[i]+.587*d[i+1]+.114*d[i+2];d[i]=d[i+1]=d[i+2]=g2}}
+ else if(m==='auto'||m==='color'){
+  var L=[levels(d,0),levels(d,1),levels(d,2)];
+  for(i=0;i<d.length;i+=4){for(var ch=0;ch<3;ch++)d[i+ch]=(d[i+ch]-L[ch][0])*255/(L[ch][1]-L[ch][0]);
+   if(m==='color'){var a=(d[i]+d[i+1]+d[i+2])/3;for(ch=0;ch<3;ch++)d[i+ch]=a+(d[i+ch]-a)*1.45}}}
+ var cf=1+pg.c/100;
+ for(i=0;i<d.length;i+=4)for(var k=0;k<3;k++){var v2=(d[i+k]-128)*cf+128+pg.b;d[i+k]=v2<0?0:v2>255?255:v2}
+ if(pg.s>0){var a2=pg.s/100*1.2,cp=new Uint8ClampedArray(d),W=bw,Hh=bh;
+  for(var yy=1;yy<Hh-1;yy++)for(var xx=1;xx<W-1;xx++){var p=(yy*W+xx)*4;
+   for(var q=0;q<3;q++){var e=4*cp[p+q]-cp[p+q-4]-cp[p+q+4]-cp[p+q-W*4]-cp[p+q+W*4];var nv=cp[p+q]+a2*e;d[p+q]=nv<0?0:nv>255?255:nv}}}
+ x.putImageData(im,0,0);return c;
+}
+
+/* Editor */
+var MODES=[['orig','Original'],['auto','Auto enhance'],['doc','Document'],['bw','Black & White'],['gray','Grayscale'],['color','Color boost']];
+$('filters').innerHTML=MODES.map(function(m){return'<button data-m="'+m[0]+'">'+m[1]+'</button>'}).join('');
+$('filters').onclick=function(e){var m=e.target.getAttribute&&e.target.getAttribute('data-m');if(!m||cur<0)return;pages[cur].mode=m;refresh()};
+function bind(id,key,lab){$(id).oninput=function(){if(cur<0)return;pages[cur].b=key==='b'?+this.value:pages[cur].b;pages[cur][key]=+this.value;$(lab).textContent=this.value;drawPrev()}}
+bind('rb','b','vb');bind('rc','c','vc');bind('rs','s','vs');
+var raf=0;function drawPrev(raw){
+ cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){
+  if(cur<0)return;var pg=pages[cur],r=render(pg,raw?'raw':0),pc=$('pc'),k=Math.min(1,Math.min(860,window.innerWidth-60)/r.width,window.innerHeight*.7/r.height);
+  pc.width=Math.round(r.width*k);pc.height=Math.round(r.height*k);pc.getContext('2d').drawImage(r,0,0,pc.width,pc.height);
+ });
+}
+function refresh(){
+ var pg=pages[cur];if(!pg){show('s-home');return}
+ $('pgl').textContent='Page '+(cur+1)+' of '+pages.length;
+ $('rb').value=pg.b;$('rc').value=pg.c;$('rs').value=pg.s;$('vb').textContent=pg.b;$('vc').textContent=pg.c;$('vs').textContent=pg.s;
+ [].forEach.call($('filters').children,function(b){b.className=b.getAttribute('data-m')===pg.mode?'on':''});
+ drawPrev();
+ $('th').innerHTML='';
+ pages.forEach(function(p,i){var t=render(p,0),s=cnv(Math.round(t.width*(120/t.height)),120);s.getContext('2d').drawImage(t,0,0,s.width,s.height);
+  var im=new Image();im.src=s.toDataURL('image/jpeg',.7);im.alt='Page '+(i+1);im.className=i===cur?'on':'';im.onclick=function(){cur=i;refresh()};$('th').appendChild(im)});
+}
+$('bL').onclick=function(){pages[cur].rot--;refresh()};
+$('bR').onclick=function(){pages[cur].rot++;refresh()};
+$('bRst').onclick=function(){var p=pages[cur];p.mode='auto';p.b=p.c=p.s=0;refresh()};
+var ba=$('bBA');['pointerdown'].forEach(function(n){ba.addEventListener(n,function(){drawPrev(true)})});
+['pointerup','pointerleave','pointercancel'].forEach(function(n){ba.addEventListener(n,function(){drawPrev()})});
+$('bDel').onclick=function(){pages.splice(cur,1);cur=Math.min(cur,pages.length-1);msg('Page deleted.');pages.length?refresh():show('s-home')};
+$('bMl').onclick=function(){if(cur>0){var t=pages[cur];pages[cur]=pages[cur-1];pages[cur-1]=t;cur--;refresh()}};
+$('bMr').onclick=function(){if(cur<pages.length-1){var t=pages[cur];pages[cur]=pages[cur+1];pages[cur+1]=t;cur++;refresh()}};
+$('bAdd').onclick=function(){editIdx=-1;show('s-home')};
+$('bRe').onclick=function(){editIdx=cur;startCrop(pages[cur].orig,pages[cur].corners.map(function(a){return a.slice()}))};
+
+/* Export */
+function jpeg(p){return render(p,0).toDataURL('image/jpeg',.93)}
+function dl(url,name){var a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove()}
+$('bJpg').onclick=function(){if(cur>=0){dl(jpeg(pages[cur]),'doxlio-page-'+(cur+1)+'.jpg');msg('JPG downloaded.','ok')}};
+$('bPdf').onclick=function(){
+ if(!pages.length)return;
+ if(!(window.jspdf&&window.jspdf.jsPDF)){msg('PDF library failed to load. Check your connection and reload.','err');return}
+ msg('Building PDF…');
+ setTimeout(function(){try{
+  var J=window.jspdf.jsPDF,pdf=null;
+  pages.forEach(function(p,i){var c=render(p,0),o=c.width>c.height?'l':'p',w=210,h=297;if(o==='l'){w=297;h=210}
+   if(!pdf)pdf=new J({orientation:o,unit:'mm',format:'a4',compress:true});else pdf.addPage('a4',o);
+   var k=Math.min(w/c.width,h/c.height),iw=c.width*k,ih=c.height*k;
+   pdf.addImage(c.toDataURL('image/jpeg',.93),'JPEG',(w-iw)/2,(h-ih)/2,iw,ih,undefined,'FAST')});
+  pdf.save('doxlio-scan.pdf');msg('PDF downloaded ('+pages.length+' page'+(pages.length>1?'s':'')+').','ok');
+ }catch(e){msg('PDF export failed: '+e.message,'err')}},30);
+};
+$('bPrev').onclick=function(){$('pvi').innerHTML='';pages.forEach(function(p,i){var im=new Image();im.src=jpeg(p);im.alt='Page '+(i+1);$('pvi').appendChild(im)});$('pv').style.display='block'};
+window.__scanCanvas=function(){return cur>=0?render(pages[cur],0):null};
+$('pvx').onclick=function(){$('pv').style.display='none'};
+})();
+
+</script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function say(t,c){var m=$('msg');m.textContent=t||'';m.className=c||''}
+var LIB={jspdf:'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',pdflib:'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js',tess:'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js'},loaded={};
+function lib(k){if(loaded[k])return loaded[k];loaded[k]=new Promise(function(res,rej){var s=document.createElement('script');s.src=LIB[k];s.onload=res;s.onerror=function(){loaded[k]=null;rej(new Error('Could not load a required library. Check your internet connection and reload the page.'))};document.head.appendChild(s)});return loaded[k]}
+function dl(blob,name){var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove()}
+function readBuf(f){return new Promise(function(r,j){var fr=new FileReader();fr.onload=function(){r(fr.result)};fr.onerror=function(){j(new Error('Could not read '+f.name))};fr.readAsArrayBuffer(f)})}
+function loadImg(f){return new Promise(function(r,j){var i=new Image();i.onload=function(){r(i)};i.onerror=function(){j(new Error('Could not read image '+f.name))};i.src=URL.createObjectURL(f)})}
+function kb(n){return n>1048576?(n/1048576).toFixed(2)+' MB':Math.round(n/1024)+' KB'}
+
+/* ---------- Tool catalogue ---------- */
+var T=[
+['scanner','Document Scanner','Camera or upload, 4-corner crop, perspective fix, filters, multi-page PDF.','Scan','📷'],
+['ocr','Image to Text (OCR)','Extract real text from photos and screenshots. English, Urdu, Arabic, Hindi, French, Spanish, German.','OCR','🔎'],
+['resume','Resume / CV Builder','3 professional templates, photo crop, live preview, print or save as PDF.','Career','📄'],
+['cover','Cover Letter Builder','Templates matching your resume, live preview, print or save as PDF.','Career','✉️'],
+['pdf-merge','Merge PDF','Combine several PDFs into one.','PDF','🔗'],
+['pdf-split','Split PDF','Split by page ranges or into single pages.','PDF','✂️'],
+['pdf-extract','Extract PDF pages','Keep only the pages you choose.','PDF','📑'],
+['pdf-delete','Delete PDF pages','Remove unwanted pages.','PDF','🗑️'],
+['pdf-rotate','Rotate PDF','Rotate all or selected pages.','PDF','🔄'],
+['pdf-reorder','Reorder PDF pages','Set a new page order.','PDF','↕️'],
+['pdf-watermark','Add watermark','Diagonal text watermark on every page.','PDF','💧'],
+['pdf-numbers','Add page numbers','Number the pages of a PDF.','PDF','#️⃣'],
+['img-pdf','JPG / PNG to PDF','Turn images into one PDF.','PDF','🖼️'],
+['text-pdf','Text to PDF','Turn typed text into a PDF.','PDF','📝']
+];
+var PAGES={
+about:['About Doxlio','Doxlio is a free set of document tools that run in your browser. Files are processed on your device. No account is needed.'],
+contact:['Contact us','Questions or feedback? Email <a href="mailto:hello@doxlio.com">hello@doxlio.com</a>. This static site has no server, so there is no contact form that stores messages.'],
+privacy:['Privacy Policy','Scanner, OCR, PDF, resume and cover letter tools run locally in your browser. Your files are not uploaded to a Doxlio server and Doxlio does not store them. Closing or reloading the page discards your work, and nothing is deleted from your device automatically. Some libraries (PDF, OCR) and OCR language data are downloaded from public CDNs when you use a tool, so those hosts can see your IP address. This is not a guarantee of absolute security.'],
+terms:['Terms of Service','Doxlio is provided as is, without warranty. You are responsible for the documents you process and for having the right to use them. Check results before relying on them.']
+};
+var TITLE={home:'Doxlio – Every document. One smart place.'};
+T.forEach(function(t){TITLE[t[0]]=t[1]+' – Doxlio (free, no sign-up)'});
+for(var pk in PAGES)TITLE[pk]=PAGES[pk][0]+' – Doxlio';
+
+/* ---------- Home ---------- */
+var CATS={Scan:'Document scanner',OCR:'OCR',PDF:'PDF and image tools',Career:'Resume and cover letter'};
+function card(t){return '<a class="tc" href="#/'+t[0]+'"><span class="ic">'+t[4]+'</span><b>'+esc(t[1])+'</b><small>'+esc(t[2])+'</small></a>'}
+function drawHome(q){
+ q=(q||'').toLowerCase();var h='',any=false;
+ Object.keys(CATS).forEach(function(c){
+  var l=T.filter(function(t){return t[3]===c&&(!q||(t[1]+' '+t[2]).toLowerCase().indexOf(q)>=0)});
+  if(l.length){any=true;h+='<h2>'+CATS[c]+'</h2><div class="grid">'+l.map(card).join('')+'</div>'}
+ });
+ $('homeTools').innerHTML=any?h:'<p>No tool matches “'+esc(q)+'”. Try “pdf”, “scan” or “resume”.</p>';
+}
+$('hsearch').oninput=function(){drawHome(this.value)};
+
+/* ---------- Generic PDF / file tools ---------- */
+function ranges(str,n){
+ var out=[];str=(str||'').replace(/\s/g,'');if(!str)throw new Error('Enter page numbers, for example 1-3,5.');
+ str.split(',').forEach(function(p){
+  var m=p.match(/^(\d*)-(\d*)$/),a,b;
+  if(m){a=m[1]?+m[1]:1;b=m[2]?+m[2]:n}else if(/^\d+$/.test(p)){a=b=+p}else throw new Error('Invalid page range: '+p);
+  if(a<1||b>n||a>b)throw new Error('Page range '+p+' is outside 1–'+n+'.');
+  for(var i=a;i<=b;i++)out.push(i-1);
+ });return out;
+}
+async function openPdf(f){
+ var PL=window.PDFLib;
+ try{return await PL.PDFDocument.load(await readBuf(f))}
+ catch(e){throw new Error('Could not open '+f.name+'. It may be encrypted or damaged.')}
+}
+async function copyTo(src,idx){var d=await PDFLib.PDFDocument.create(),p=await d.copyPages(src,idx);p.forEach(function(x){d.addPage(x)});return d}
+function stem(f){return f.name.replace(/\.[^.]+$/,'')}
+var PDFACC='.pdf,application/pdf',IMGACC='image/jpeg,image/png,image/webp';
+var P={
+'pdf-merge':{lib:'pdflib',acc:PDFACC,multi:1,min:2,opts:'',run:async function(fs){var d=await PDFLib.PDFDocument.create();for(var i=0;i<fs.length;i++){var s=await openPdf(fs[i]),p=await d.copyPages(s,s.getPageIndices());p.forEach(function(x){d.addPage(x)})}return[{name:'merged.pdf',bytes:await d.save()}]}},
+'pdf-split':{lib:'pdflib',acc:PDFACC,opts:'<label class="f"><span>Ranges (optional). Comma separated parts, each becomes one file, e.g. 1-3,4,5-8. Leave empty for one file per page (max 200).</span><input type="text" id="o1"></label>',run:async function(fs,o){var s=await openPdf(fs[0]),n=s.getPageCount(),out=[],parts=o.o1.trim()?o.o1.split(','):null;if(!parts){if(n>200)throw new Error('Too many pages. Use ranges.');for(var i=0;i<n;i++)out.push({name:stem(fs[0])+'-page-'+(i+1)+'.pdf',bytes:await (await copyTo(s,[i])).save()})}else for(var j=0;j<parts.length;j++)out.push({name:stem(fs[0])+'-part-'+(j+1)+'.pdf',bytes:await (await copyTo(s,ranges(parts[j],n))).save()});return out}},
+'pdf-extract':{lib:'pdflib',acc:PDFACC,opts:'<label class="f"><span>Pages to keep, e.g. 1-3,7</span><input type="text" id="o1"></label>',run:async function(fs,o){var s=await openPdf(fs[0]);return[{name:stem(fs[0])+'-extracted.pdf',bytes:await (await copyTo(s,ranges(o.o1,s.getPageCount()))).save()}]}},
+'pdf-delete':{lib:'pdflib',acc:PDFACC,opts:'<label class="f"><span>Pages to delete, e.g. 2,4-6</span><input type="text" id="o1"></label>',run:async function(fs,o){var s=await openPdf(fs[0]),n=s.getPageCount(),del=ranges(o.o1,n),keep=[];for(var i=0;i<n;i++)if(del.indexOf(i)<0)keep.push(i);if(!keep.length)throw new Error('You cannot delete every page.');return[{name:stem(fs[0])+'-edited.pdf',bytes:await (await copyTo(s,keep)).save()}]}},
+'pdf-reorder':{lib:'pdflib',acc:PDFACC,opts:'<label class="f"><span>New order, e.g. 3,1,2,4-6 (pages you leave out are dropped)</span><input type="text" id="o1"></label>',run:async function(fs,o){var s=await openPdf(fs[0]);return[{name:stem(fs[0])+'-reordered.pdf',bytes:await (await copyTo(s,ranges(o.o1,s.getPageCount()))).save()}]}},
+'pdf-rotate':{lib:'pdflib',acc:PDFACC,opts:'<label class="f"><span>Rotate by</span><select id="o2"><option value="90">90° clockwise</option><option value="180">180°</option><option value="270">90° counter-clockwise</option></select></label><label class="f"><span>Pages (empty = all), e.g. 1-2</span><input type="text" id="o1"></label>',run:async function(fs,o){var s=await openPdf(fs[0]),n=s.getPageCount(),sel=o.o1.trim()?ranges(o.o1,n):s.getPageIndices();sel.forEach(function(i){var p=s.getPage(i);p.setRotation(PDFLib.degrees((p.getRotation().angle+ +o.o2)%360))});return[{name:stem(fs[0])+'-rotated.pdf',bytes:await s.save()}]}},
+'pdf-watermark':{lib:'pdflib',acc:PDFACC,opts:'<label class="f"><span>Watermark text (Latin characters only)</span><input type="text" id="o1" value="CONFIDENTIAL"></label><label class="f"><span>Opacity (10–90 %)</span><input type="range" id="o2" min="10" max="90" value="25"></label>',run:async function(fs,o){var s=await openPdf(fs[0]),PL=PDFLib,font=await s.embedFont(PL.StandardFonts.HelveticaBold);if(!o.o1.trim())throw new Error('Enter the watermark text.');s.getPages().forEach(function(p){var w=p.getWidth(),h=p.getHeight(),size=Math.min(w,h)/Math.max(6,o.o1.length*.55),tw=font.widthOfTextAtSize(o.o1,size);try{p.drawText(o.o1,{x:w/2-tw/2*.7071,y:h/2-tw/2*.7071,size:size,font:font,color:PL.rgb(.5,.5,.5),opacity:o.o2/100,rotate:PL.degrees(45)})}catch(e){throw new Error('This font only supports Latin letters and digits.')}});return[{name:stem(fs[0])+'-watermarked.pdf',bytes:await s.save()}]}},
+'pdf-numbers':{lib:'pdflib',acc:PDFACC,opts:'<label class="f"><span>Position</span><select id="o2"><option value="bc">Bottom centre</option><option value="br">Bottom right</option><option value="bl">Bottom left</option><option value="tc">Top centre</option></select></label><label class="f"><span>Start at</span><input type="text" id="o1" value="1"></label>',run:async function(fs,o){var s=await openPdf(fs[0]),PL=PDFLib,font=await s.embedFont(PL.StandardFonts.Helvetica),st=parseInt(o.o1,10);if(isNaN(st))throw new Error('Start number must be a number.');s.getPages().forEach(function(p,i){var t=String(st+i),w=p.getWidth(),h=p.getHeight(),tw=font.widthOfTextAtSize(t,10),x=o.o2.charAt(1)==='c'?w/2-tw/2:o.o2.charAt(1)==='r'?w-40-tw:40,y=o.o2.charAt(0)==='b'?24:h-30;p.drawText(t,{x:x,y:y,size:10,font:font,color:PL.rgb(.2,.2,.2)})});return[{name:stem(fs[0])+'-numbered.pdf',bytes:await s.save()}]}},
+'img-pdf':{lib:'jspdf',acc:IMGACC,multi:1,min:1,opts:'<label class="f"><span>Page size</span><select id="o2"><option value="a4">A4 (fit image)</option><option value="img">Same size as image</option></select></label>',run:async function(fs,o){var J=window.jspdf.jsPDF,pdf=null;for(var i=0;i<fs.length;i++){var im=await loadImg(fs[i]),c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;var x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0);var d=c.toDataURL('image/jpeg',.92),ori=c.width>c.height?'l':'p';
+ if(o.o2==='img'){var f2=.264583;if(!pdf)pdf=new J({orientation:ori,unit:'mm',format:[c.width*f2,c.height*f2]});else pdf.addPage([c.width*f2,c.height*f2],ori);pdf.addImage(d,'JPEG',0,0,c.width*f2,c.height*f2)}
+ else{var W=ori==='l'?297:210,H=ori==='l'?210:297,m=10,k=Math.min((W-2*m)/c.width,(H-2*m)/c.height);if(!pdf)pdf=new J({orientation:ori,unit:'mm',format:'a4'});else pdf.addPage('a4',ori);pdf.addImage(d,'JPEG',(W-c.width*k)/2,(H-c.height*k)/2,c.width*k,c.height*k)}}
+ return[{name:'images.pdf',bytes:pdf.output('arraybuffer')}]}},
+'text-pdf':{lib:'jspdf',nofile:1,opts:'<label class="f"><span>Your text (Latin characters; Urdu/Arabic need the OCR tool’s Word export instead)</span><textarea id="o1" rows="12"></textarea></label>',run:async function(fs,o){if(!o.o1.trim())throw new Error('Type some text first.');var pdf=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),lines=pdf.splitTextToSize(o.o1,175),y=20;pdf.setFontSize(11);lines.forEach(function(l){if(y>280){pdf.addPage();y=20}pdf.text(l,18,y);y+=6});return[{name:'text.pdf',bytes:pdf.output('arraybuffer')}]}}
+};
+var TF=[];
+function drawTool(id){
+ var t=T.filter(function(x){return x[0]===id})[0],p=P[id];TF=[];
+ $('v-tool').innerHTML='<h1>'+t[4]+' '+esc(t[1])+'</h1><p>'+esc(t[2])+' Free to use — no sign-up required. Files stay on your device.</p><div class="card">'+
+ (p.nofile?'':'<div class="drop" id="dz"><p>Drag and drop '+(p.multi?'files':'a file')+' here or</p><label class="btn p">Browse files<input type="file" id="tf" accept="'+p.acc+'"'+(p.multi?' multiple':'')+' hidden></label></div><div id="tfl"></div>')+
+ '<div id="topts">'+p.opts+'</div><div class="row"><button class="p" id="trun">'+esc(t[1])+'</button></div><div id="tres"></div></div>';
+ if(!p.nofile){
+  var add=function(list){[].forEach.call(list,function(f){
+   var okT=p.acc.indexOf('pdf')>=0?(f.type==='application/pdf'||/\.pdf$/i.test(f.name)):/^image\/(jpeg|png|webp)$/.test(f.type);
+   if(!okT){say(f.name+': unsupported file type.','err');return}
+   if(f.size>100*1048576){say(f.name+': larger than 100 MB.','err');return}
+   if(!p.multi)TF=[];TF.push(f);say('')});drawFl()};
+  $('tf').onchange=function(){add(this.files);this.value=''};
+  var dz=$('dz');['dragover','dragenter'].forEach(function(n){dz.addEventListener(n,function(e){e.preventDefault();dz.classList.add('hot')})});
+  ['dragleave','drop'].forEach(function(n){dz.addEventListener(n,function(e){e.preventDefault();dz.classList.remove('hot')})});
+  dz.addEventListener('drop',function(e){add(e.dataTransfer.files)});
+ }
+ function drawFl(){var el=$('tfl');if(!el)return;el.innerHTML=TF.map(function(f,i){return'<div class="fl"><span>'+esc(f.name)+' · '+kb(f.size)+'</span>'+(p.multi?'<button data-u="'+i+'">↑</button><button data-d="'+i+'">↓</button>':'')+'<button data-x="'+i+'">✕</button></div>'}).join('')}
+ $('v-tool').onclick=function(e){var b=e.target,u=b.getAttribute&&b.getAttribute('data-u'),d=b.getAttribute&&b.getAttribute('data-d'),x=b.getAttribute&&b.getAttribute('data-x'),i;
+  if(u!=null){i=+u;if(i>0){var a=TF[i];TF[i]=TF[i-1];TF[i-1]=a}drawFl()}if(d!=null){i=+d;if(i<TF.length-1){var c=TF[i];TF[i]=TF[i+1];TF[i+1]=c}drawFl()}if(x!=null){TF.splice(+x,1);drawFl()}};
+ $('trun').onclick=async function(){
+  var btn=this;
+  if(!p.nofile&&TF.length<(p.min||1)){say(p.min>1?'Add at least '+p.min+' files.':'Choose a file first.','err');return}
+  var o={};[].forEach.call($('topts').querySelectorAll('input,select,textarea'),function(el){o[el.id]=el.value});
+  btn.disabled=true;say('Processing…');$('tres').innerHTML='';
+  try{await lib(p.lib);var out=await p.run(TF,o);
+   $('tres').innerHTML=out.map(function(r,i){return'<div class="fl"><span>'+esc(r.name)+' · '+kb(r.bytes.byteLength)+'</span><button class="p" data-r="'+i+'">Download</button><button data-v="'+i+'">Open</button></div>'}).join('');
+   $('tres').onclick=function(e){var r=e.target.getAttribute('data-r'),v=e.target.getAttribute('data-v'),k=r!=null?r:v;if(k==null)return;var b=new Blob([out[+k].bytes],{type:'application/pdf'});if(r!=null)dl(b,out[+k].name);else window.open(URL.createObjectURL(b),'_blank')};
+   say('Done. '+out.length+' file'+(out.length>1?'s':'')+' ready. Nothing was uploaded.','ok');
+  }catch(e){say(e.message||'Something went wrong.','err')}
+  btn.disabled=false;
+ };
+}
+
+/* ---------- OCR ---------- */
+var OCR_SRC=null,ocrFile=null;
+var LANGS=[['eng','English'],['urd','Urdu'],['ara','Arabic'],['hin','Hindi'],['fra','French'],['spa','Spanish'],['deu','German']];
+$('ocrLang').innerHTML=LANGS.map(function(l){return'<option value="'+l[0]+'">'+l[1]+'</option>'}).join('');
+function ocrShow(url){$('ocrPrev').src=url;$('ocrPrev').hidden=false}
+$('ocrFile').onchange=function(){var f=this.files[0];this.value='';if(!f)return;
+ if(!/^image\/(jpeg|png|webp)$/.test(f.type)){say('Use a JPG, PNG or WebP image.','err');return}
+ if(f.size>25*1048576){say('Image is larger than 25 MB.','err');return}
+ OCR_SRC=null;ocrFile=f;ocrShow(URL.createObjectURL(f));say('')};
+$('ocrLang').onchange=function(){$('ocrOut').dir=(this.value==='urd'||this.value==='ara')?'rtl':'ltr'};
+$('ocrRun').onclick=async function(){
+ var src=OCR_SRC||ocrFile;if(!src){say('Choose an image first.','err');return}
+ var btn=this;btn.disabled=true;$('ocrOut').value='';var w=null;
+ try{say('Loading OCR engine…');await lib('tess');
+  w=await Tesseract.createWorker($('ocrLang').value,1,{logger:function(m){if(m.status)say(m.status+(m.progress?' '+Math.round(m.progress*100)+'%':'')+'…')}});
+  var r=await w.recognize(OCR_SRC?OCR_SRC.toDataURL('image/png'):src);
+  $('ocrOut').value=r.data.text.trim();$('ocrOut').dir=($('ocrLang').value==='urd'||$('ocrLang').value==='ara')?'rtl':'ltr';
+  say($('ocrOut').value?'Done. Check and edit the text below (confidence '+Math.round(r.data.confidence)+'%).':'No text was found. Try a sharper, well-lit image.',$('ocrOut').value?'ok':'err');
+ }catch(e){say('OCR failed: '+(e.message||e)+' (language data is downloaded on first use, so you must be online).','err')}
+ try{if(w)await w.terminate()}catch(_){}btn.disabled=false;
+};
+$('ocrCopy').onclick=function(){var t=$('ocrOut').value;if(!t)return;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){say('Copied.','ok')},function(){$('ocrOut').select();document.execCommand('copy');say('Copied.','ok')})};
+$('ocrTxt').onclick=function(){var t=$('ocrOut').value;if(t)dl(new Blob([t],{type:'text/plain;charset=utf-8'}),'extracted-text.txt')};
+$('ocrDoc').onclick=function(){var t=$('ocrOut').value;if(!t)return;var rtl=$('ocrOut').dir==='rtl';dl(new Blob(['\ufeff<html><head><meta charset="utf-8"></head><body dir="'+(rtl?'rtl':'ltr')+'">'+t.split(/\n+/).map(function(l){return'<p>'+esc(l)+'</p>'}).join('')+'</body></html>'],{type:'application/msword'}),'extracted-text.doc')};
+document.addEventListener('click',function(e){if(e.target&&e.target.id==='bOcr'){var c=window.__scanCanvas&&window.__scanCanvas();if(!c){say('Scan a page first.','err');return}OCR_SRC=c;ocrFile=null;location.hash='#/ocr'}});
+
+/* ---------- Print helper and sheet CSS ---------- */
+var SHEETCSS='.sheet{width:794px;min-height:1123px;background:#fff;color:#1b1f2a;font:13px/1.5 Calibri,Arial,sans-serif;box-sizing:border-box;text-align:left}.sheet *{box-sizing:border-box}.sheet h1{font-size:30px;margin:0;line-height:1.15}.sheet h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 6px;color:var(--ac)}.sheet p{margin:0 0 6px;white-space:pre-wrap}.sheet ul{margin:2px 0 6px 18px;padding:0}.ith{display:flex;justify-content:space-between;gap:8px}.its{color:#555;font-style:italic}.it{margin-bottom:9px}.chip{display:inline-block;border:1px solid var(--ac);color:var(--ac);border-radius:99px;padding:1px 9px;margin:0 4px 4px 0;font-size:12px}.sub{font-size:15px;margin:2px 0 8px;color:#444}.ct{font-size:12px;color:#555}.t-modern{display:grid;grid-template-columns:250px 1fr}.t-modern aside{background:var(--ac);color:#fff;padding:34px 22px}.t-modern aside h3{color:#fff;border-bottom:1px solid #fff6;padding-bottom:3px}.t-modern aside .chip{border-color:#fff;color:#fff}.t-modern aside .ct{color:#fff;word-break:break-word}.t-modern main{padding:34px 30px}.t-modern h1{color:var(--ac)}.ph{width:130px;height:130px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 16px;border:3px solid #fff}.t-classic{padding:44px 52px;font-family:Georgia,"Times New Roman",serif}.t-classic .hd{text-align:center;border-bottom:2px solid #222;padding-bottom:10px;margin-bottom:6px}.t-classic h3{color:#222;border-bottom:1px solid #999;padding-bottom:2px}.t-classic .ph{margin:0 auto 8px;border-color:#222}.t-minimal{padding:44px 52px}.t-minimal h1{font-weight:300;letter-spacing:.02em}.t-minimal h3{color:#222;font-weight:700;border-left:4px solid var(--ac);padding-left:8px}.t-minimal .ph{margin:0 0 10px;border-color:var(--ac)}.lt{padding:56px 64px;line-height:1.65}.lt .sp{height:14px}';
+var st=document.createElement('style');st.textContent=SHEETCSS+'.scale{transform-origin:top left}';document.head.appendChild(st);
+function printSheet(el){if(!el)return;var f=document.createElement('iframe');f.style.cssText='position:fixed;right:0;bottom:0;width:0;height:0;border:0';document.body.appendChild(f);
+ var d=f.contentWindow.document;d.open();d.write('<!doctype html><html><head><meta charset="utf-8"><style>@page{size:A4;margin:0}body{margin:0}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}'+SHEETCSS+'</style></head><body>'+el.outerHTML+'</body></html>');d.close();
+ setTimeout(function(){f.contentWindow.focus();f.contentWindow.print();setTimeout(function(){f.remove()},2000)},400)}
+function fit(wrapId){var w=$(wrapId),s=w.firstChild;if(!s||!w.parentNode.clientWidth)return;var k=Math.min(1,(w.parentNode.clientWidth-4)/794);s.style.transform='scale('+k+')';w.style.height=(s.firstChild.offsetHeight*k)+'px'}
+window.addEventListener('resize',function(){fit('rvWrap');fit('clWrap')});
+function fld(label,k,val,type){return'<label class="f"><span>'+label+'</span>'+(type==='area'?'<textarea rows="4" data-k="'+k+'">'+esc(val)+'</textarea>':'<input type="text" data-k="'+k+'" value="'+esc(val)+'">')+'</label>'}
+function tplBtns(cur,cb){return['modern|Modern Professional','classic|Classic Corporate','minimal|Minimal Clean'].map(function(s){s=s.split('|');return'<button data-tpl="'+s[0]+'" class="'+(cur===s[0]?'on':'')+'">'+s[1]+'</button>'}).join('')}
+
+/* ---------- Resume builder ---------- */
+var R={name:'Alex Morgan',title:'Product Designer',email:'alex@example.com',phone:'+44 20 7946 0000',loc:'London, UK',link:'linkedin.com/in/alexmorgan',photo:'',color:'#4f46e5',tpl:'modern',
+sum:'Product designer with 6 years of experience shipping web and mobile products used by millions of people. Strong at research, prototyping and working closely with engineers.',
+skills:'Figma, Prototyping, User research, Design systems, HTML/CSS',
+show:{sum:1,exp:1,edu:1,skills:1,lang:1,cert:1,proj:1,ref:0},
+exp:[{a:'Senior Product Designer',b:'Northwind Labs',c:'2021 – Present',d:'• Led redesign of onboarding, raising activation by 18%\n• Built and maintained the company design system'}],
+edu:[{a:'BA Graphic Design',b:'University of the Arts London',c:'2014 – 2017',d:''}],
+proj:[{a:'Portfolio redesign',b:'alexmorgan.design',c:'2024',d:'Rebuilt a personal portfolio with a focus on accessibility.'}],
+cert:[{a:'UX Certification',b:'Nielsen Norman Group',c:'2022',d:''}],
+lang:[{a:'English',b:'Native',c:'',d:''},{a:'French',b:'Professional',c:'',d:''}],
+ref:[{a:'Available on request',b:'',c:'',d:''}]};
+var LISTS={exp:['Work experience',['Job title','Company','Dates','Details (one bullet per line)']],edu:['Education',['Degree','School','Dates','Notes']],proj:['Projects',['Project','Link','Dates','Description']],cert:['Certifications',['Certificate','Issuer','Year','']],lang:['Languages',['Language','Level','','']],ref:['References',['Name','Contact','','']]};
+function rvForm(){
+ var h='<div class="row">'+tplBtns(R.tpl)+'</div><label class="f"><span>Accent colour</span><input type="color" id="rvColor" value="'+R.color+'"></label>';
+ h+='<h3>Personal information</h3>'+fld('Full name','name',R.name)+fld('Job title','title',R.title)+fld('Email','email',R.email)+fld('Phone','phone',R.phone)+fld('Location','loc',R.loc)+fld('Website / LinkedIn','link',R.link);
+ h+='<div class="row"><label class="btn">Profile photo<input type="file" id="rvPhoto" accept="image/jpeg,image/png,image/webp" hidden></label><button id="rvPhotoX">Remove photo</button></div>';
+ h+='<h3>Professional summary</h3><label class="chk"><input type="checkbox" data-show="sum"'+(R.show.sum?' checked':'')+'> Show section</label>'+fld('Summary','sum',R.sum,'area');
+ h+='<h3>Skills</h3><label class="chk"><input type="checkbox" data-show="skills"'+(R.show.skills?' checked':'')+'> Show section</label>'+fld('Skills (comma separated)','skills',R.skills);
+ Object.keys(LISTS).forEach(function(k){var L=LISTS[k];h+='<h3>'+L[0]+'</h3><label class="chk"><input type="checkbox" data-show="'+k+'"'+(R.show[k]?' checked':'')+'> Show section</label>';
+  R[k].forEach(function(x,i){h+='<div class="sub-card">';['a','b','c','d'].forEach(function(f,j){if(L[1][j])h+='<label class="f"><span>'+L[1][j]+'</span>'+(f==='d'?'<textarea rows="3" data-l="'+k+'" data-i="'+i+'" data-f="d">'+esc(x.d)+'</textarea>':'<input type="text" data-l="'+k+'" data-i="'+i+'" data-f="'+f+'" value="'+esc(x[f])+'">')+'</label>'});h+='<button data-rm="'+k+'|'+i+'">Remove</button></div>'});
+  h+='<button data-add="'+k+'">+ Add</button>'});
+ return h;
+}
+function bul(t){var ls=String(t).split('\n').filter(Boolean),b=ls.filter(function(l){return/^\s*[•\-*]/.test(l)});return b.length===ls.length?'<ul>'+ls.map(function(l){return'<li>'+esc(l.replace(/^\s*[•\-*]\s*/,''))+'</li>'}).join('')+'</ul>':'<p>'+esc(t)+'</p>'}
+function items(k){return R[k].filter(function(x){return x.a||x.b}).map(function(x){return'<div class="it"><div class="ith"><b>'+esc(x.a)+'</b><span>'+esc(x.c)+'</span></div>'+(x.b?'<div class="its">'+esc(x.b)+'</div>':'')+(x.d?bul(x.d):'')+'</div>'}).join('')}
+function sec(t,b){return b?'<section><h3>'+t+'</h3>'+b+'</section>':''}
+function chips(s){return s.split(',').map(function(x){return x.trim()}).filter(Boolean).map(function(x){return'<span class="chip">'+esc(x)+'</span>'}).join('')}
+function rvSheet(){
+ var s=R.show,ph=R.photo?'<img class="ph" alt="Profile photo" src="'+R.photo+'">':'',
+ contact=[R.email,R.phone,R.loc,R.link].filter(Boolean).map(function(x){return'<div class="ct">'+esc(x)+'</div>'}).join(''),
+ lang=s.lang?sec('Languages',R.lang.filter(function(x){return x.a}).map(function(x){return'<div class="it">'+esc(x.a)+(x.b?' — '+esc(x.b):'')+'</div>'}).join('')):'',
+ sk=s.skills?sec('Skills',chips(R.skills)):'',
+ main=(s.sum?sec('Profile','<p>'+esc(R.sum)+'</p>'):'')+(s.exp?sec('Experience',items('exp')):'')+(s.edu?sec('Education',items('edu')):'')+(s.proj?sec('Projects',items('proj')):'')+(s.cert?sec('Certifications',items('cert')):'')+(s.ref?sec('References',items('ref')):'');
+ if(R.tpl==='modern')return'<div class="sheet t-modern" style="--ac:'+R.color+'"><aside>'+ph+sec('Contact',contact)+sk+lang+'</aside><main><h1>'+esc(R.name)+'</h1><div class="sub">'+esc(R.title)+'</div>'+main+'</main></div>';
+ var head=ph+'<h1>'+esc(R.name)+'</h1><div class="sub">'+esc(R.title)+'</div><div class="ct">'+[R.email,R.phone,R.loc,R.link].filter(Boolean).map(esc).join(' · ')+'</div>';
+ return'<div class="sheet t-'+R.tpl+'" style="--ac:'+R.color+'"><div class="hd">'+head+'</div>'+main+sk+lang+'</div>';
+}
+function rvDraw(){$('rvWrap').innerHTML='<div class="scale">'+rvSheet()+'</div>';fit('rvWrap')}
+function rvAll(){$('rvForm').innerHTML=rvForm();rvDraw()}
+var rvF=$('rvForm');
+rvF.addEventListener('input',function(e){var t=e.target;
+ if(t.id==='rvColor'){R.color=t.value}
+ else if(t.getAttribute('data-k')){R[t.getAttribute('data-k')]=t.value}
+ else if(t.getAttribute('data-l')){R[t.getAttribute('data-l')][+t.getAttribute('data-i')][t.getAttribute('data-f')]=t.value}
+ else if(t.getAttribute('data-show')){R.show[t.getAttribute('data-show')]=t.checked?1:0}
+ rvDraw()});
+rvF.addEventListener('click',function(e){var t=e.target;
+ if(t.getAttribute('data-tpl')){R.tpl=t.getAttribute('data-tpl');rvAll()}
+ else if(t.getAttribute('data-add')){R[t.getAttribute('data-add')].push({a:'',b:'',c:'',d:''});rvAll()}
+ else if(t.getAttribute('data-rm')){var p=t.getAttribute('data-rm').split('|');R[p[0]].splice(+p[1],1);rvAll()}
+ else if(t.id==='rvPhotoX'){R.photo='';rvDraw()}});
+rvF.addEventListener('change',function(e){if(e.target.id==='rvPhoto'){var f=e.target.files[0];e.target.value='';if(f)openCrop(f)}});
+$('rvPrint').onclick=function(){printSheet($('rvWrap').querySelector('.sheet'));say('In the print dialog choose “Save as PDF” to download an A4 PDF.')};
+$('rvClear').onclick=function(){R.name=R.title=R.email=R.phone=R.loc=R.link=R.sum=R.skills='';['exp','edu','proj','cert','lang','ref'].forEach(function(k){R[k]=[{a:'',b:'',c:'',d:''}]});R.photo='';rvAll()};
+
+/* photo crop */
+var CR={img:null};
+function openCrop(f){if(!/^image\/(jpeg|png|webp)$/.test(f.type)){say('Use a JPG, PNG or WebP photo.','err');return}if(f.size>15*1048576){say('Photo is larger than 15 MB.','err');return}
+ loadImg(f).then(function(i){CR.img=i;$('crZ').value=1;$('crX').value=0;$('crY').value=0;$('crop').style.display='flex';crDraw()},function(e){say(e.message,'err')})}
+function crDraw(){var c=$('crC'),x=c.getContext('2d'),S=280,i=CR.img,z=+$('crZ').value,k=Math.max(S/i.naturalWidth,S/i.naturalHeight)*z,w=i.naturalWidth*k,h=i.naturalHeight*k,
+ dx=(S-w)/2+(+$('crX').value)*(Math.max(0,w-S)/2)/100,dy=(S-h)/2+(+$('crY').value)*(Math.max(0,h-S)/2)/100;x.fillStyle='#fff';x.fillRect(0,0,S,S);x.drawImage(i,dx,dy,w,h)}
+['crZ','crX','crY'].forEach(function(id){$(id).oninput=crDraw});
+$('crOk').onclick=function(){var o=document.createElement('canvas');o.width=o.height=400;o.getContext('2d').drawImage($('crC'),0,0,400,400);R.photo=o.toDataURL('image/jpeg',.9);$('crop').style.display='none';rvDraw()};
+$('crNo').onclick=function(){$('crop').style.display='none'};
+
+/* ---------- Cover letter ---------- */
+var C={name:'Alex Morgan',email:'alex@example.com',phone:'+44 20 7946 0000',loc:'London, UK',date:new Date().toISOString().slice(0,10),mname:'Hiring Manager',mtitle:'',company:'Northwind Labs',caddr:'',job:'Product Designer',jd:'',body:'',color:'#4f46e5',tpl:'modern'};
+function clDraft(){return'Dear '+(C.mname||'Hiring Manager')+',\n\nI am excited to apply for the '+(C.job||'open')+' position at '+(C.company||'your company')+'. My background and the experience in my resume match what the role requires, and I would welcome the chance to contribute to your team.\n\nIn my previous roles I have delivered results by combining careful planning, clear communication and attention to detail. '+(C.jd?'I noted that the role asks for the following, and I would be glad to discuss how my experience applies:\n'+C.jd.split('\n').slice(0,3).join('\n')+'\n\n':'')+'I would be happy to discuss my application in more detail. Thank you for your time and consideration.\n\nSincerely,\n'+C.name}
+C.body=clDraft();
+function clForm(){return'<div class="row">'+tplBtns(C.tpl)+'</div><label class="f"><span>Accent colour</span><input type="color" id="clColor" value="'+C.color+'"></label><h3>Your details</h3>'+fld('Full name','name',C.name)+fld('Email','email',C.email)+fld('Phone','phone',C.phone)+fld('Location','loc',C.loc)+fld('Date','date',C.date)+'<h3>Company</h3>'+fld('Hiring manager','mname',C.mname)+fld('Manager title','mtitle',C.mtitle)+fld('Company','company',C.company)+fld('Company address','caddr',C.caddr)+fld('Job title','job',C.job)+fld('Job description (optional)','jd',C.jd,'area')+'<div class="row"><button id="clDraft">Generate draft from template</button></div><p class="note">AI writing needs a server with an API key. This static site has none, so the draft is a template, not AI.</p><h3>Letter</h3><label class="f"><span>Editable letter text</span><textarea rows="14" id="clBody">'+esc(C.body)+'</textarea></label>'}
+function clSheet(){var hd=[C.email,C.phone,C.loc].filter(Boolean).map(esc).join(' · '),rc=[C.mname,C.mtitle,C.company,C.caddr].filter(Boolean).map(esc).join('<br>'),b=esc(C.body).replace(/\n/g,'<br>');
+ var head=R.tpl&&0;return'<div class="sheet t-'+C.tpl+' lt" style="--ac:'+C.color+(C.tpl==='classic'?';font-family:Georgia,serif':'')+'"><div'+(C.tpl==='modern'?' style="border-left:6px solid '+C.color+';padding-left:14px"':C.tpl==='classic'?' style="text-align:center;border-bottom:2px solid #222;padding-bottom:10px"':'')+'><h1'+(C.tpl==='modern'?' style="color:'+C.color+'"':'')+'>'+esc(C.name)+'</h1><div class="ct">'+hd+'</div></div><div class="sp"></div><div class="sp"></div><div>'+esc(C.date)+'</div><div class="sp"></div><div>'+rc+'</div><div class="sp"></div><div class="sp"></div><div>'+b+'</div></div>'}
+function clDraw(){$('clWrap').innerHTML='<div class="scale">'+clSheet()+'</div>';fit('clWrap')}
+function clAll(){$('clForm').innerHTML=clForm();clDraw()}
+$('clForm').addEventListener('input',function(e){var t=e.target;if(t.id==='clColor')C.color=t.value;else if(t.id==='clBody')C.body=t.value;else if(t.getAttribute('data-k'))C[t.getAttribute('data-k')]=t.value;clDraw()});
+$('clForm').addEventListener('click',function(e){var t=e.target;if(t.getAttribute('data-tpl')){C.tpl=t.getAttribute('data-tpl');clAll()}else if(t.id==='clDraft'){C.body=clDraft();clAll()}});
+$('clPrint').onclick=function(){printSheet($('clWrap').querySelector('.sheet'));say('In the print dialog choose “Save as PDF” to download an A4 PDF.')};
+
+/* ---------- Router ---------- */
+var inited={};
+function route(){
+ var r=(location.hash.replace(/^#\/?/,'')||window.DX_ROUTE||'home').split('?')[0],view='v-home';
+ if($('s-cam')&&!$('s-cam').hidden&&$('bCamX'))$('bCamX').click();
+ if(r==='home')view='v-home';else if(r==='scanner')view='v-scanner';else if(r==='ocr')view='v-ocr';else if(r==='resume')view='v-resume';else if(r==='cover')view='v-cover';
+ else if(P[r])view='v-tool';else if(PAGES[r])view='v-page';else{view='v-page';r='404'}
+ [].forEach.call(document.querySelectorAll('.view'),function(v){v.hidden=v.id!==view});
+ say('');
+ if(view==='v-tool')drawTool(r);
+ if(view==='v-page'){var pg=PAGES[r]||['Page not found','This page does not exist. <a href="#/">Go to all tools</a>.'];$('v-page').innerHTML='<h1>'+pg[0]+'</h1><div class="card"><p>'+pg[1]+'</p></div>'}
+ if(view==='v-scanner'){lib('jspdf').catch(function(e){say(e.message,'err')});if(window.loadCV)window.loadCV()}
+ if(view==='v-ocr'){if(OCR_SRC)ocrShow(OCR_SRC.toDataURL('image/jpeg',.6))}
+ if(view==='v-resume'){if(!inited.r){inited.r=1;rvAll()}else fit('rvWrap');setTimeout(function(){fit('rvWrap')},50)}
+ if(view==='v-cover'){if(!inited.c){inited.c=1;clAll()}else fit('clWrap');setTimeout(function(){fit('clWrap')},50)}
+ document.title=TITLE[r]||'Doxlio';window.scrollTo(0,0);
+ [].forEach.call(document.querySelectorAll('nav a'),function(a){a.className=a.getAttribute('href')==='#/'+r?'on':''});
+}
+window.addEventListener('hashchange',route);
+drawHome('');
+$('faq').innerHTML=[['Is Doxlio free?','Yes. All tools are free to use — no sign-up required.'],['Are my files uploaded?','No. Processing happens in your browser. OCR language data and some libraries are downloaded from public CDNs the first time you use a tool.'],['Does it delete my files?','Doxlio never stores them. Work disappears when you close or reload the page; files on your device are not touched.'],['Why no AI tools?','AI features need a server holding an API key, and this is a static site, so they are not included.']].map(function(q){return'<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join('');
+route();
+})();
+
+</script>
+</body>
+</html>
