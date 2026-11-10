@@ -3,6 +3,6 @@
 //    then paste its endpoint here, for example: 'https://formspree.io/f/abcdwxyz'
 // 2) Optionally add a public contact email address to show on the Contact page (or leave empty).
 window.DX_CONFIG={
-  formspreeEndpoint:'',
+  formspreeEndpoint:'https://formspree.io/f/xjyynwbe',
   contactEmail:''
 };
