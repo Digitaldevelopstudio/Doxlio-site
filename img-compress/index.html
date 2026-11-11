@@ -175,6 +175,21 @@ input[aria-invalid="true"],select[aria-invalid="true"],textarea[aria-invalid="tr
 <label class="f" for="ctMessage"><span>Message</span><textarea id="ctMessage" name="message" rows="6" maxlength="5000" required placeholder="Describe your question or feedback…" aria-describedby="eMessage"></textarea></label><div class="fe" id="eMessage" role="alert"></div>
 <button class="p" id="ctBtn" type="submit">Submit Message</button><div id="ctMsg" role="status" aria-live="polite" style="margin-top:8px"></div>
 <div class="tips"><b>What to include:</b><ul><li>Tool name and page URL</li><li>Steps to reproduce a bug</li><li>Device and browser, if relevant</li></ul></div></form></div></div>
+<div class="view" id="v-ite" hidden><h1>✏️ Edit Text in Image</h1>
+<p>Upload an image, let Doxlio find the text, click a line or word, change it and download the result. The font, size and colour are matched automatically and you can fine-tune them. Free to use — no sign-up required. Everything runs on your device.</p>
+<p class="note">Use this only on images you own or have permission to edit. Do not use it to alter IDs, certificates, receipts or other documents in order to mislead anyone.</p>
+<div class="card"><div class="row"><label class="btn p">Choose image<input type="file" id="iteFile" accept="image/jpeg,image/png,image/webp" hidden></label><select id="iteLang" style="width:auto" aria-label="Text language"></select><button id="iteScan" disabled>Find text</button><select id="iteMode" style="width:auto" aria-label="Edit mode"><option value="line">Edit whole lines</option><option value="word">Edit single words</option><option value="manual">Draw an area manually</option></select></div>
+<div class="two" style="grid-template-columns:minmax(0,1fr) minmax(0,340px)"><div class="pvbox" id="iteBox"><div style="position:relative;display:inline-block;max-width:100%;line-height:0"><canvas id="iteCv" width="10" height="10"></canvas><canvas id="iteOv" width="10" height="10" style="position:absolute;left:0;top:0"></canvas></div></div>
+<div id="itePanel" hidden><label class="f"><span>New text</span><textarea id="iteText" rows="2"></textarea></label>
+<label class="f"><span>Font (matched automatically)</span><select id="iteFont"></select></label><label class="btn" style="margin:4px 0">Use my own font file<input type="file" id="iteFontFile" accept=".ttf,.otf,.woff,.woff2" hidden></label>
+<div class="row"><label class="f" style="flex:1"><span>Size (px)</span><input type="text" id="iteSize" inputmode="numeric"></label><label class="f" style="flex:1"><span>Colour</span><input type="color" id="iteColor"></label></div>
+<div class="row"><label class="chk"><input type="checkbox" id="iteBold"> Bold</label><label class="chk"><input type="checkbox" id="iteItalic"> Italic</label></div>
+<div class="row"><label class="f" style="flex:1"><span>Alignment</span><select id="iteAlign"><option value="left">Left</option><option value="center">Centre</option><option value="right">Right</option></select></label><label class="f" style="flex:1"><span>Letter spacing</span><input type="text" id="iteLs" inputmode="decimal" value="0"></label></div>
+<div class="row"><label class="f" style="flex:1"><span>Move X</span><input type="text" id="iteDx" inputmode="numeric" value="0"></label><label class="f" style="flex:1"><span>Move Y</span><input type="text" id="iteDy" inputmode="numeric" value="0"></label><label class="f" style="flex:1"><span>Erase margin</span><input type="text" id="iteEp" inputmode="numeric" value="3"></label></div>
+<div class="row"><label class="f" style="flex:1"><span>Background</span><select id="iteBgMode"><option value="auto">Match automatically</option><option value="pick">Pick a colour</option></select></label><label class="f"><span>&nbsp;</span><input type="color" id="iteBg"></label></div>
+<div class="row"><button class="p" id="iteApply">Apply change</button><button id="iteUndo">Undo</button><button id="iteReset">Reset image</button></div>
+<div class="row"><button id="iteDlPng">Download PNG</button><button id="iteDlJpg">Download JPG</button></div>
+<p class="note">Fonts are matched from the fonts on your device, so the match is close but not guaranteed. If you have the original font file, use “Use my own font file”.</p></div></div></div></div>
 <div class="view" id="v-tool" hidden></div>
 <div class="view" id="v-page" hidden></div>
 </main>
@@ -489,6 +504,7 @@ var T=[
 ['ai-jd','AI Job Description Analyzer','Understand a job post and tailor your application.','AI','🎯'],
 ['ai-bio','AI Professional Bio Generator','Short bio from your facts.','AI','👤'],
 ['ai-letter','AI Letter Generator','Draft a professional letter.','AI','📨'],
+['img-text-edit','Edit Text in Image','Change names, dates or spelling in an image. Font, size and colour are matched automatically.','Image','✏️'],
 ['qr','QR code generator','Make a QR code for a link or text.','Productivity','▦'],
 ['pdf-jpg','PDF to JPG','Turn every PDF page into a JPG image.','PDF','🖼️'],
 ['pdf-text','PDF to Text (with OCR)','Copy text from a PDF. Scanned pages are read with OCR.','OCR','📃'],
@@ -500,7 +516,7 @@ function inT(r){return T.some(function(t){return t[0]===r})}
 var PAGES={
 about:['About Doxlio','Doxlio is a free set of document tools that run in your browser. Files are processed on your device. No account is needed.'],
 privacy:['Privacy Policy','Scanner, OCR, PDF, resume and cover letter tools run locally in your browser. Your files are not uploaded to a Doxlio server and Doxlio does not store them. Closing or reloading the page discards your work, and nothing is deleted from your device automatically. If you send a message through the contact form, your name, email address and message are sent to our form provider (Formspree) and delivered to our inbox; please do not include sensitive information. Some libraries (PDF, OCR) and OCR language data are downloaded from public CDNs when you use a tool, so those hosts can see your IP address. This is not a guarantee of absolute security.'],
-terms:['Terms of Service','Doxlio is provided as is, without warranty. You are responsible for the documents you process and for having the right to use them. Check results before relying on them.']
+terms:['Terms of Service','Doxlio is provided as is, without warranty. You are responsible for the documents you process and for having the right to use them. Check results before relying on them. Do not use editing tools to alter identity documents, certificates, receipts or any other document in order to mislead or defraud anyone.']
 };
 var TITLE={home:'Doxlio – Every document. One smart place.'};
 T.forEach(function(t){TITLE[t[0]]=t[1]+' – Doxlio (free, no sign-up)'});
@@ -824,17 +840,101 @@ $('ctForm').addEventListener('submit',async function(e){
  else{M.className='err';M.textContent=res.error}});
 window.__ct={validate:ctValidate,send:ctSend,endpoint:EP};
 
+
+/* ---------- Edit text in image ---------- */
+var IT={orig:null,work:null,hist:[],L:{line:[],word:[]},mode:'line',sel:null,sc:1,rtl:false,prev:null,drag:null,name:'image'};
+var FONTS=[['Arial','Arial, Helvetica, sans-serif'],['Verdana','Verdana, Geneva, sans-serif'],['Tahoma','Tahoma, Geneva, sans-serif'],['Trebuchet MS','"Trebuchet MS", sans-serif'],['Segoe UI','"Segoe UI", system-ui, sans-serif'],['Calibri','Calibri, Carlito, sans-serif'],['Times New Roman','"Times New Roman", Times, serif'],['Georgia','Georgia, serif'],['Palatino','"Palatino Linotype", Palatino, serif'],['Courier New','"Courier New", monospace'],['Impact','Impact, sans-serif']];
+var mctx=document.createElement('canvas').getContext('2d');
+function iteFontOpts(){$('iteFont').innerHTML=FONTS.map(function(f,i){return'<option value="'+i+'">'+esc(f[0])+'</option>'}).join('')}
+iteFontOpts();$('iteLang').innerHTML=LANGS.map(function(l){return'<option value="'+l[0]+'">'+l[1]+'</option>'}).join('');
+function iteMeas(t,fam,b,i,s){mctx.font=(i?'italic ':'')+(b?'bold ':'')+s+'px '+fam;var m=mctx.measureText(t);return{w:m.width,a:m.actualBoundingBoxAscent||s*.75,d:m.actualBoundingBoxDescent||0}}
+function hex2rgb(h){var m=/^#?([0-9a-f]{6})$/i.exec(h||'');if(!m)return[0,0,0];var n=parseInt(m[1],16);return[n>>16&255,n>>8&255,n&255]}
+function rgb2hex(c){return'#'+c.map(function(v){v=Math.max(0,Math.min(255,Math.round(v)));return(v<16?'0':'')+v.toString(16)}).join('')}
+function iteCopy(c){var o=document.createElement('canvas');o.width=c.width;o.height=c.height;o.getContext('2d',{willReadFrequently:true}).drawImage(c,0,0);return o}
+function iteLayout(){if(!IT.work)return;var box=$('iteBox'),mw=Math.max(200,box.clientWidth-16);IT.sc=Math.min(1,mw/IT.work.width);[$('iteCv'),$('iteOv')].forEach(function(c){c.width=Math.max(1,Math.round(IT.work.width*IT.sc));c.height=Math.max(1,Math.round(IT.work.height*IT.sc))})}
+function iteDraw(prev){if(!IT.work)return;var cv=$('iteCv'),x=cv.getContext('2d'),s=IT.sc;x.drawImage(IT.work,0,0,cv.width,cv.height);if(prev)x.drawImage(prev.cv,prev.x*s,prev.y*s,prev.w*s,prev.h*s);
+ var ov=$('iteOv'),o=ov.getContext('2d');o.clearRect(0,0,ov.width,ov.height);
+ if(IT.mode!=='manual')IT.L[IT.mode].forEach(function(it){var b=it.b,sel=IT.sel===it;o.lineWidth=sel?2:1;o.strokeStyle=sel?'#5b21f5':'rgba(29,78,216,.75)';if(sel){o.fillStyle='rgba(91,33,245,.12)';o.fillRect(b.x0*s,b.y0*s,(b.x1-b.x0)*s,(b.y1-b.y0)*s)}o.strokeRect(b.x0*s,b.y0*s,(b.x1-b.x0)*s,(b.y1-b.y0)*s)});
+ else{var r=IT.drag||(IT.sel&&IT.sel.manual?{x:IT.sel.b.x0,y:IT.sel.b.y0,x2:IT.sel.b.x1,y2:IT.sel.b.y1}:null);if(r){o.strokeStyle='#5b21f5';o.lineWidth=2;o.setLineDash([6,4]);o.strokeRect(Math.min(r.x,r.x2)*s,Math.min(r.y,r.y2)*s,Math.abs(r.x2-r.x)*s,Math.abs(r.y2-r.y)*s);o.setLineDash([])}}}
+function iteShow(){if(IT.work){iteLayout();iteDraw(IT.prev)}}
+window.addEventListener('resize',function(){if(!$('v-ite').hidden)iteShow()});
+$('iteFile').onchange=async function(){var f=this.files[0];this.value='';if(!f)return;
+ if(!/^image\/(jpeg|png|webp)$/.test(f.type)){say('Use a JPG, PNG or WebP image.','err');return}if(f.size>25*1048576){say('Image is larger than 25 MB.','err');return}
+ try{var b=window.createImageBitmap?await createImageBitmap(f,{imageOrientation:'from-image'}):await loadImg(f),bw=b.width||b.naturalWidth,bh=b.height||b.naturalHeight,k=Math.min(1,4000/Math.max(bw,bh)),c=document.createElement('canvas');c.width=Math.round(bw*k);c.height=Math.round(bh*k);c.getContext('2d',{willReadFrequently:true}).drawImage(b,0,0,c.width,c.height);
+  IT.orig=c;IT.work=iteCopy(c);IT.hist=[];IT.L={line:[],word:[]};IT.sel=null;IT.prev=null;IT.name=f.name.replace(/\.[^.]+$/,'');$('iteScan').disabled=false;iteLayout();iteDraw();say('Image loaded. Press “Find text”.')}catch(e){say('Could not read this image.','err')}};
+$('iteScan').onclick=async function(){if(!IT.work)return;var btn=this,w=null;btn.disabled=true;
+ try{say('Loading text recognition…');await lib('tess');var lang=$('iteLang').value;IT.rtl=(lang==='urd'||lang==='ara');
+  w=await Tesseract.createWorker(lang,1,{logger:function(m){if(m.status)say(m.status+(m.progress?' '+Math.round(m.progress*100)+'%':'')+'…')}});
+  var r=await w.recognize(IT.work),d=r.data,ws=d.words,ls=d.lines;
+  if(!ws||!ls){ws=[];ls=[];(d.blocks||[]).forEach(function(bl){(bl.paragraphs||[]).forEach(function(p){(p.lines||[]).forEach(function(l){ls.push(l);(l.words||[]).forEach(function(x){ws.push(x)})})})})}
+  var norm=function(a){return a.filter(function(x){return x.text&&x.text.trim()&&x.bbox&&x.bbox.x1-x.bbox.x0>3&&x.bbox.y1-x.bbox.y0>3}).map(function(x){var t=x.text.trim(),b={x0:x.bbox.x0,y0:x.bbox.y0,x1:x.bbox.x1,y1:x.bbox.y1};return{t:t,t0:t,b:b,b0:{x0:b.x0,y0:b.y0,x1:b.x1,y1:b.y1}}})};
+  IT.L={line:norm(ls),word:norm(ws)};IT.sel=null;IT.prev=null;iteDraw();
+  say(IT.L.line.length?'Found '+IT.L.line.length+' line(s) of text. Click a line (or switch to single words) to edit it.':'No text was found. Use “Draw an area manually” to mark the text yourself.',IT.L.line.length?'ok':'err');
+ }catch(e){say('Text recognition failed: '+(e.message||e)+' (language data downloads on first use, so you must be online).','err')}
+ try{if(w)await w.terminate()}catch(_){}btn.disabled=false};
+$('iteMode').onchange=function(){IT.mode=this.value;IT.sel=null;IT.prev=null;$('iteOv').style.touchAction=IT.mode==='manual'?'none':'auto';iteDraw();say(IT.mode==='manual'?'Drag a rectangle around the text you want to replace.':'')};
+function ipt(e){var r=$('iteOv').getBoundingClientRect();return[(e.clientX-r.left)/IT.sc,(e.clientY-r.top)/IT.sc]}
+$('iteOv').addEventListener('pointerdown',function(e){if(!IT.work)return;var q=ipt(e);
+ if(IT.mode==='manual'){IT.drag={x:q[0],y:q[1],x2:q[0],y2:q[1]};IT.sel=null;IT.prev=null;try{$('iteOv').setPointerCapture(e.pointerId)}catch(_){}e.preventDefault();return}
+ var best=null,ba=1e18;IT.L[IT.mode].forEach(function(it){var b=it.b;if(q[0]>=b.x0&&q[0]<=b.x1&&q[1]>=b.y0&&q[1]<=b.y1){var ar=(b.x1-b.x0)*(b.y1-b.y0);if(ar<ba){ba=ar;best=it}}});
+ if(best)iteSelect(best);else say('No detected text at this spot. Try “Edit single words”, or draw an area manually.')});
+$('iteOv').addEventListener('pointermove',function(e){if(!IT.drag)return;var q=ipt(e);IT.drag.x2=Math.max(0,Math.min(IT.work.width,q[0]));IT.drag.y2=Math.max(0,Math.min(IT.work.height,q[1]));iteDraw()});
+['pointerup','pointercancel'].forEach(function(n){$('iteOv').addEventListener(n,function(){var d=IT.drag;if(!d)return;IT.drag=null;var b={x0:Math.min(d.x,d.x2),y0:Math.min(d.y,d.y2),x1:Math.max(d.x,d.x2),y1:Math.max(d.y,d.y2)};if(b.x1-b.x0>6&&b.y1-b.y0>6)iteSelect({t:'',t0:'',b:b,b0:b,manual:1,tmp:1});else iteDraw()})});
+function imed(x,y,w,h){var W=IT.work.width,H=IT.work.height;x=Math.max(0,Math.round(x));y=Math.max(0,Math.round(y));w=Math.min(W-x,Math.round(w));h=Math.min(H-y,Math.round(h));if(w<1||h<1)return null;
+ var d=IT.work.getContext('2d').getImageData(x,y,w,h).data,R=[],G=[],B=[];for(var i=0;i<d.length;i+=4){R.push(d[i]);G.push(d[i+1]);B.push(d[i+2])}var m=function(a){a.sort(function(p,q){return p-q});return a[a.length>>1]};return[m(R),m(G),m(B)]}
+function iteBgSample(b,pad){var x0=b.x0-pad,x1=b.x1+pad,y0=b.y0-pad,y1=b.y1+pad,s=3,w=x1-x0,h=y1-y0,T=imed(x0,y0-s,w,s),B=imed(x0,y1,w,s),L=imed(x0-s,y0,s,h),R=imed(x1,y0,s,h),all=[T,B,L,R].filter(Boolean);
+ if(!all.length){var wh=[255,255,255];return{T:wh,B:wh,L:wh,R:wh,pad:pad}}var av=[0,1,2].map(function(c){return all.reduce(function(s2,q){return s2+q[c]},0)/all.length});
+ return{T:T||av,B:B||av,L:L||av,R:R||av,pad:pad}}
+function iteColorOf(b,bgs){var W=IT.work.width,H=IT.work.height,x=Math.max(0,Math.round(b.x0)),y=Math.max(0,Math.round(b.y0)),w=Math.min(W-x,Math.round(b.x1-b.x0)),h=Math.min(H-y,Math.round(b.y1-b.y0));if(w<1||h<1)return[0,0,0];
+ var d=IT.work.getContext('2d').getImageData(x,y,w,h).data,bg=[0,1,2].map(function(c){return(bgs.T[c]+bgs.B[c]+bgs.L[c]+bgs.R[c])/4}),mx=0,i;
+ for(i=0;i<d.length;i+=4){var e=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]);if(e>mx)mx=e}
+ if(mx<45)return bg[0]+bg[1]+bg[2]>384?[20,20,20]:[240,240,240];
+ var s=[0,0,0],n=0;for(i=0;i<d.length;i+=4){var e2=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]);if(e2>=mx*.7){s[0]+=d[i];s[1]+=d[i+1];s[2]+=d[i+2];n++}}return n?[s[0]/n,s[1]/n,s[2]/n]:[0,0,0]}
+function iteAuto(it){var b=it.b,W=b.x1-b.x0,H=b.y1-b.y0,bgs=iteBgSample(b,3),col=iteColorOf(b,bgs),best=null;
+ if(!it.t.trim()){return{fi:0,bold:false,size:Math.max(6,Math.round(H/1.15)),color:rgb2hex(col),bgs:bgs}}
+ FONTS.forEach(function(f,fi){[false,true].forEach(function(bd){var m=iteMeas(it.t,f[1],bd,false,100),ih=m.a+m.d;if(ih<=0||m.w<=0)return;var sH=100*H/ih,err=Math.abs(m.w*sH/100-W)/W;if(!best||err<best.err)best={err:err,fi:fi,bold:bd,sH:sH,w100:m.w}})});
+ var size=it.t.trim().length>=3?100*W/best.w100:best.sH;return{fi:best.fi,bold:best.bold,size:Math.max(6,Math.round(size)),color:rgb2hex(col),bgs:bgs}}
+function iteSelect(it){IT.sel=it;var m=iteAuto(it);it.bgs=m.bgs;$('iteText').value=it.t;$('iteFont').value=m.fi;$('iteBold').checked=!!m.bold;$('iteItalic').checked=false;$('iteSize').value=m.size;$('iteColor').value=m.color;$('iteLs').value=0;$('iteAlign').value=IT.rtl?'right':'left';$('iteDx').value=0;$('iteDy').value=0;$('iteEp').value=3;$('iteBgMode').value='auto';$('iteBg').value=rgb2hex([0,1,2].map(function(c){return(m.bgs.T[c]+m.bgs.B[c]+m.bgs.L[c]+m.bgs.R[c])/4}));
+ $('itePanel').hidden=false;iteDraw();itePrev();say('Selected. Change the text, then press “Apply change”. Font, size and colour were matched automatically; adjust them if needed.')}
+function iteP(){return{text:$('iteText').value,fi:+$('iteFont').value||0,size:Math.max(4,+$('iteSize').value||12),bold:$('iteBold').checked,italic:$('iteItalic').checked,color:$('iteColor').value,ls:IT.rtl?0:(+$('iteLs').value||0),align:$('iteAlign').value,dx:+$('iteDx').value||0,dy:+$('iteDy').value||0,ep:Math.max(0,Math.min(30,Math.round(+$('iteEp').value||0))),bgMode:$('iteBgMode').value,bg:$('iteBg').value}}
+function iteRender(p){var sel=IT.sel,b=sel.b,W=IT.work.width,H=IT.work.height,fam=FONTS[p.fi]?FONTS[p.fi][1]:FONTS[0][1],pad=p.ep;
+ var bx0=Math.round(b.x0)-pad,by0=Math.round(b.y0)-pad,bx1=Math.round(b.x1)+pad,by1=Math.round(b.y1)+pad;
+ var om=sel.t?iteMeas(sel.t,fam,p.bold,p.italic,p.size):{w:0,a:p.size*.75,d:0},base=Math.round(b.y1)-Math.round(om.d)+p.dy;
+ var nm=iteMeas(p.text||' ',fam,p.bold,p.italic,p.size),nw=nm.w+p.ls*(p.text||'').length;
+ var left=p.align==='left'?b.x0+p.dx:p.align==='right'?b.x1+p.dx-nw:(b.x0+b.x1)/2+p.dx-nw/2;
+ var rx0=Math.max(0,Math.min(bx0,Math.floor(left)-2)),rx1=Math.min(W,Math.max(bx1,Math.ceil(left+nw)+2)),ry0=Math.max(0,Math.min(by0,Math.floor(base-nm.a)-2)),ry1=Math.min(H,Math.max(by1,Math.ceil(base+nm.d)+2)),rw=rx1-rx0,rh=ry1-ry0;if(rw<2||rh<2)return null;
+ var c=document.createElement('canvas');c.width=rw;c.height=rh;var x=c.getContext('2d');x.drawImage(IT.work,rx0,ry0,rw,rh,0,0,rw,rh);
+ var ex0=Math.max(0,bx0),ey0=Math.max(0,by0),ex1=Math.min(W,bx1),ey1=Math.min(H,by1),ew=ex1-ex0,eh=ey1-ey0;
+ if(ew>0&&eh>0){if(!sel.bgs||sel.bgs.pad!==pad)sel.bgs=iteBgSample(b,pad);var g=sel.bgs,pc=p.bgMode==='pick'?hex2rgb(p.bg):null,id=x.createImageData(ew,eh),d=id.data;
+  for(var yy=0;yy<eh;yy++){var v=eh>1?yy/(eh-1):0;for(var xx=0;xx<ew;xx++){var u=ew>1?xx/(ew-1):0,o=(yy*ew+xx)*4;for(var k=0;k<3;k++)d[o+k]=pc?pc[k]:Math.round(.5*((1-u)*g.L[k]+u*g.R[k])+.5*((1-v)*g.T[k]+v*g.B[k]));d[o+3]=255}}
+  x.putImageData(id,ex0-rx0,ey0-ry0)}
+ x.font=(p.italic?'italic ':'')+(p.bold?'bold ':'')+p.size+'px '+fam;x.fillStyle=p.color;x.textBaseline='alphabetic';x.textAlign='left';if('direction' in x)x.direction=IT.rtl?'rtl':'ltr';if('letterSpacing' in x)x.letterSpacing=p.ls+'px';
+ if(p.text)x.fillText(p.text,left-rx0,base-ry0);
+ return{x:rx0,y:ry0,w:rw,h:rh,cv:c,left:left,base:base,nm:nm,nw:nw}}
+var iteRaf=0;function itePrev(){if(!IT.sel)return;cancelAnimationFrame(iteRaf);iteRaf=requestAnimationFrame(function(){if(!IT.sel)return;IT.prev=iteRender(iteP());iteDraw(IT.prev)})}
+$('itePanel').addEventListener('input',itePrev);$('itePanel').addEventListener('change',itePrev);
+$('iteApply').onclick=function(){if(!IT.sel){say('Click a text line or word first.','err');return}var p=iteP(),r=iteRender(p);if(!r){say('Nothing to apply.','err');return}
+ var wx=IT.work.getContext('2d');IT.hist.push({x:r.x,y:r.y,img:wx.getImageData(r.x,r.y,r.w,r.h)});if(IT.hist.length>30)IT.hist.shift();wx.drawImage(r.cv,r.x,r.y);
+ var it=IT.sel;it.t=p.text;it.b={x0:r.left,x1:r.left+r.nw,y0:r.base-r.nm.a,y1:r.base+r.nm.d};it.bgs=null;IT.sel=null;IT.prev=null;iteDraw();say('Change applied. Select more text to edit, or download the image.','ok')};
+$('iteUndo').onclick=function(){var h=IT.hist.pop();if(!h){say('Nothing to undo.');return}IT.work.getContext('2d').putImageData(h.img,h.x,h.y);IT.sel=null;IT.prev=null;iteDraw();say('Undone.')};
+$('iteReset').onclick=function(){if(!IT.orig)return;IT.work=iteCopy(IT.orig);IT.hist=[];['line','word'].forEach(function(k){IT.L[k].forEach(function(it){it.t=it.t0;it.b={x0:it.b0.x0,y0:it.b0.y0,x1:it.b0.x1,y1:it.b0.y1};it.bgs=null})});IT.sel=null;IT.prev=null;iteDraw();say('Image reset to the original.')};
+$('iteDlPng').onclick=function(){if(IT.work)IT.work.toBlob(function(b){dl(b,'edited-'+IT.name+'.png')},'image/png')};
+$('iteDlJpg').onclick=function(){if(IT.work)IT.work.toBlob(function(b){dl(b,'edited-'+IT.name+'.jpg')},'image/jpeg',.95)};
+$('iteFontFile').onchange=async function(){var f=this.files[0];this.value='';if(!f)return;if(!/\.(ttf|otf|woff2?)$/i.test(f.name)){say('Use a .ttf, .otf, .woff or .woff2 font file.','err');return}if(f.size>10*1048576){say('Font file is larger than 10 MB.','err');return}
+ try{var nmf='DXUser'+FONTS.length,ff=new FontFace(nmf,await readBuf(f));await ff.load();document.fonts.add(ff);FONTS.push([f.name.replace(/\.[^.]+$/,''),'"'+nmf+'"']);iteFontOpts();$('iteFont').value=FONTS.length-1;say('Font added: '+f.name,'ok');itePrev()}catch(e){say('Could not load this font file.','err')}};
+
+window.__ite={IT:IT,select:iteSelect,render:iteRender,P:iteP,auto:iteAuto};
 /* ---------- Router ---------- */
 var inited={};
 function route(){
  var r=(location.hash.replace(/^#\/?/,'')||window.DX_ROUTE||'home').split('?')[0],view='v-home';
  if($('s-cam')&&!$('s-cam').hidden&&$('bCamX'))$('bCamX').click();
  if(r==='home')view='v-home';else if(r==='scanner')view='v-scanner';else if(r==='ocr')view='v-ocr';else if(r==='resume')view='v-resume';else if(r==='cover')view='v-cover';
- else if(r==='contact')view='v-contact';else if(r==='wordcount'||r==='case')view='v-text';else if(r==='blog'||(r.indexOf('blog-')===0&&ARTB[r.slice(5)]))view='v-page';else if(AIT[r]&&inT(r))view='v-ai';else if(P[r]&&inT(r))view='v-tool';else if(PAGES[r])view='v-page';else{view='v-page';r='404'}
+ else if(r==='contact')view='v-contact';else if(r==='img-text-edit')view='v-ite';else if(r==='wordcount'||r==='case')view='v-text';else if(r==='blog'||(r.indexOf('blog-')===0&&ARTB[r.slice(5)]))view='v-page';else if(AIT[r]&&inT(r))view='v-ai';else if(P[r]&&inT(r))view='v-tool';else if(PAGES[r])view='v-page';else{view='v-page';r='404'}
  [].forEach.call(document.querySelectorAll('.view'),function(v){v.hidden=v.id!==view});
  say('');
  if(view==='v-tool')drawTool(r);if(view==='v-ai')drawAi(r);
- if(view==='v-text')drawText(r);if(view==='v-contact')ctInit();
+ if(view==='v-text')drawText(r);if(view==='v-contact')ctInit();if(view==='v-ite')iteShow();
  if(view==='v-page'&&(r==='blog'||r.indexOf('blog-')===0)){$('v-page').innerHTML=blogHtml(r)}else if(view==='v-page'){var pg=PAGES[r]||['Page not found','This page does not exist. <a href="#/">Go to all tools</a>.'];$('v-page').innerHTML='<h1>'+pg[0]+'</h1><div class="card"><p>'+pg[1]+'</p></div>'}
  if(view==='v-scanner'){lib('jspdf').catch(function(e){say(e.message,'err')});if(window.loadCV)window.loadCV()}
  if(view==='v-ocr'){if(OCR_SRC)ocrShow(OCR_SRC.toDataURL('image/jpeg',.6))}
