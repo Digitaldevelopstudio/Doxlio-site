@@ -263,7 +263,7 @@ function lib(k){if(loaded[k])return loaded[k];loaded[k]=new Promise(function(res
 function dl(blob,name){var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove()}
 function readBuf(f){return new Promise(function(r,j){var fr=new FileReader();fr.onload=function(){r(fr.result)};fr.onerror=function(){j(new Error('Could not read '+f.name))};fr.readAsArrayBuffer(f)})}
 function loadImg(f){return new Promise(function(r,j){var i=new Image();i.onload=function(){r(i)};i.onerror=function(){j(new Error('Could not read image '+f.name))};i.src=URL.createObjectURL(f)})}
-var API={ai:false,convert:false};fetch('/api/health').then(function(r){return r.json()}).then(function(j){API=j}).catch(function(){});
+var API={ai:false,convert:false};if(!window.DX_STATIC)fetch('/api/health').then(function(r){return r.json()}).then(function(j){API=j}).catch(function(){});
 function kb(n){return n>1048576?(n/1048576).toFixed(2)+' MB':Math.round(n/1024)+' KB'}
 
 /* ---------- Tool catalogue ---------- */
